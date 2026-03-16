@@ -1,3 +1,14 @@
+/* Brand Variables */
+:root {
+  --primary-teal: #148577;
+  --secondary-navy: #102130;
+  --gradient-accent: linear-gradient(135deg, #148577, #28b485);
+  --text-dark: #102130;
+  --text-gray: #555;
+  --bg-light: #f9fbff;
+  --white: #ffffff;
+}
+
 /* Reset and Global */
 * {
   margin: 0;
@@ -5,51 +16,54 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
+
 html {
   scroll-behavior: smooth;
 }
 
-
 body {
-  background-color: #ffffff;
-  color: #222;
+  background-color: var(--white);
+  color: var(--text-dark);
   line-height: 1.6;
-}
-
-/* Buttons */
-.btn {
-  background-color: #005fa3;
-  color: #fff;
-  padding: 12px 25px;
-  border: none;
-  border-radius: 30px;
-  font-weight: 600;
-  text-decoration: none;
-  display: inline-block;
-  margin: 10px 10px 0 0;
-  transition: background 0.3s ease;
-}
-
-.btn:hover {
-  background-color: #004080;
-}
-
-.btn-outline {
-  background-color: transparent;
-  border: 2px solid #005fa3;
-  color: #005fa3;
-}
-
-.btn-outline:hover {
-  background-color: #005fa3;
-  color: #fff;
 }
 
 /* Container */
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 80px 20px;
+}
+
+/* Buttons */
+.btn {
+  background: var(--gradient-accent);
+  color: #fff;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  margin: 10px 10px 0 0;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(20, 133, 119, 0.2);
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(20, 133, 119, 0.4);
+  
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--primary-teal);
+  color: var(--primary-teal);
+}
+
+.btn-outline:hover {
+  background: var(--primary-teal);
+  color: var(--white);
 }
 
 /* Hero Section */
@@ -59,423 +73,638 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: linear-gradient(135deg, #e6f0ff, #ffffff);
+  background: radial-gradient(circle at top right, #eefaf9, #ffffff);
   padding: 40px 20px;
 }
 
 .hero h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
   margin-bottom: 20px;
+  color: var(--secondary-navy);
 }
 
 .hero .highlight {
-  color: #005fa3;
+  background: var(--gradient-accent);
+  background-clip: text; /* Standard Property */
+  -webkit-background-clip: text; /* Safari/Chrome support ke liye */
+  -webkit-text-fill-color: transparent; /* Text ko transparent karne ke liye */
+  color: transparent; /* Fallback */
 }
 
 .hero p {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
-  color: #555;
+  font-size: 1.25rem;
+  max-width: 700px;
+  margin: 0 auto 35px;
+  color: var(--text-gray);
+}
+.hero-badge {
+    display: inline-block;
+    background: rgba(20, 133, 119, 0.1); /* Light Teal background */
+    color: var(--primary-teal);
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+    border: 1px solid rgba(20, 133, 119, 0.2);
 }
 
-.hero-buttons {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-/* About Section */
-.about {
-  padding: 80px 20px;
-  background: linear-gradient(135deg, #e2efff, #f9fbff);
-}
-
-.about-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 40px;
-}
-
-.about-text {
-  flex: 1 1 500px;
-}
-
-.about-text h2 {
-  font-size: 2.5rem;
-  color: #005fa3;
-  margin-bottom: 20px;
-}
-
-.about-text p {
-  font-size: 1.1rem;
-  color: #555;
-  margin-bottom: 20px;
-}
-
-.about-image {
-  flex: 1 1 400px;
-}
-
-.about-image img {
-  width: 100%;
-  max-width: 400px;
-  display: block;
-  margin: 0 auto;
-}
 /* Services Section */
 .services {
-  padding: 80px 20px;
-  background: linear-gradient(135deg, #ebf6ff, #ffffff);
-
+    background-color: #f9fbff; /* Light gray-blue background taaki white cards dikhein */
+    padding: 80px 20px;
 }
-
 .section-title {
   text-align: center;
-  font-size: 2.5rem;
-  color: #005fa3;
+  font-size: 2.8rem;
+  color: var(--secondary-navy);
   margin-bottom: 50px;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--gradient-accent);
+  margin: 15px auto 0;
+  border-radius: 2px;
 }
 
 .services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
+    display: grid;
+    /* 4 columns setup for desktop, automatically adjusts for smaller screens */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px;
+    padding: 20px 0;
+}
+
+/* Tablets ke liye 2-2 ka grid (800px ke aaspass) */
+@media (max-width: 1024px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile ke liye single column */
+@media (max-width: 600px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .service-card {
-  background: #ffffff;
-  border: 1px solid #e0e0e0;
-  border-radius: 12px;
-  padding: 30px 20px;
-  text-align: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease;
+    background: #ffffff;
+    border-radius: 20px; /* Perfect Rounded Corners */
+    padding: 30px 20px; /* Thoda kam horizontal padding taaki content fit ho */
+    height: 100%; /* Saare cards ki height barabar rahegi */
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.03); /* Very subtle border */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); /* Soft shadow for visibility */
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
 }
 
+/* Hover Effect - Aspire Brand Colors */
 .service-card:hover {
-  transform: translateY(-8px);
+    transform: translateY(-10px);
+    border-color: #148577; /* Logo ka Teal color */
+    box-shadow: 0 15px 35px rgba(20, 133, 119, 0.15); /* Teal glow */
 }
 
 .service-card img {
-  width: 150px;
-  margin-bottom: 20px;
+    width: 100px; /* Icon size set */
+    height: auto;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover img {
+    transform: scale(1.1); /* Hover pe icon thoda bada hoga */
 }
 
 .service-card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-  color: #222;
+    font-size: 1.15rem; /* Font thoda chota desktop ke liye */
+   color: #102130; /* Logo ka Navy Blue */
+    margin-top: 15px;
 }
 
 .service-card p {
-  font-size: 1rem;
-  color: #555;
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.5;
 }
 
-
-/* Portfolio Section */
-
-.portfolio-carousel {
-  display: flex;
-  gap: 30px;
-  overflow: hidden;
-  position: relative;
-  scroll-behavior: smooth;
-}
-
-.portfolio-slide {
-  flex: 0 0 560px;
-  background: white;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  transition: transform 0.3s;
-}
-
-.portfolio-slide img {
-  width: 100%;
-  height: 200px;
-  object-fit: contain;
-}
-
-.portfolio-info {
-  padding: 15px;
-  text-align: center;
-}
-
-.portfolio-info h3 {
-  margin-bottom: 10px;
-  color: #003366;
-}
-
-.portfolio-info p {
-  font-size: 0.95rem;
-  color: #555;
-}
-
-
-/* Contact Section */
-.contact {
-  padding: 80px 20px;
-  background: linear-gradient(135deg, #eaf3ff, #ffffff);
-
-}
-
-.contact-form {
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.form-group {
-  margin-bottom: 20px;
-}
-
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 15px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-family: 'Poppins', sans-serif;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-  outline: none;
-  border-color: #005fa3;
-  box-shadow: 0 0 5px rgba(0,95,163,0.5);
-}
-
-.contact-form button {
-  width: 100%;
-  background-color: #005fa3;
-  color: white;
-  border: none;
-  padding: 15px;
-  border-radius: 8px;
-  font-size: 1.2rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.contact-form button:hover {
-  background-color: #003f7f;
-}
-/* Footer Section */
+/* =========================================
+   Modern Footer Fix
+   ========================================= */
 .footer {
-  background-color: #003366;
-  color: white;
-  padding: 40px 20px;
-  margin-top: 50px;
+    background-color: var(--secondary-navy);
+    color: var(--white);
+    padding: 80px 20px 0; /* Space for content */
 }
 
 .footer-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Brand left, Social right */
+    gap: 40px;
+    align-items: start;
+    padding-bottom: 60px;
 }
 
-.footer-left h3 {
-  font-size: 1.8rem;
-  margin-bottom: 10px;
+.footer-brand h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-.footer-left p {
-  font-size: 0.9rem;
-  color: #ccc;
+.footer-brand p {
+    color: #a0aec0;
+    max-width: 450px;
+    margin-bottom: 25px;
 }
 
-.footer-right a {
-  margin-left: 15px;
+.footer-contact-info p {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    color: var(--white);
 }
 
-.footer-right img {
-  width: 40px;
-  height: 40px;
-  transition: transform 0.3s ease;
+.footer-social-box h4 {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
 }
 
-.footer-right img:hover {
-  transform: scale(1.2);
-}
-/* Scroll to Top Button */
-#scrollToTopBtn {
-  position: fixed;
-  bottom: 40px;
-  right: 40px;
-  z-index: 99;
-  font-size: 18px;
-  background-color: #005fa3;
-  color: white;
-  border: none;
-  outline: none;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  cursor: pointer;
-  display: none;
-  transition: background-color 0.3s, transform 0.3s;
+.social-links {
+    display: flex;
+    gap: 15px;
 }
 
-#scrollToTopBtn:hover {
-  background-color: #003366;
-  transform: scale(1.1);
+.social-links a img {
+    width: 35px;
+    height: 35px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0.8;
 }
 
+.social-links a:hover img {
+    transform: translateY(-5px);
+    opacity: 1;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 25px 20px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #718096;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .footer-brand p { margin: 0 auto 25px; }
+    .social-links { justify-content: center; }
+}
 .whatsapp-float {
   position: fixed;
-  bottom: 100px;
-  right: 40px;
-  width: 55px;
-  height: 55px;
+  bottom: 90px;
+  right: 30px;
+  width: 50px; /* Fixed size */
+  height: 50px;
   z-index: 1000;
-  background-color: #25d366;
+  background: var(--gradient-accent);
   border-radius: 50%;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: transform 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
 .whatsapp-float img {
-  width: 28px;
-  height: 28px;
+  width: 35px; /* Icon size fixed */
+  height: 35px;
 }
 
 .whatsapp-float:hover {
-  transform: scale(1.1);
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(20, 133, 119, 0.5);
 }
 
-/* ========================= */
-/* Responsive Styles         */
-/* ========================= */
-
-/* Tablets (max-width: 992px) */
-@media (max-width: 992px) {
-  .hero h1 {
-    font-size: 2.3rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-  }
-
-  .about-container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .about-text h2 {
-    font-size: 2rem;
-  }
-
-  .services-grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  }
-
-  .portfolio-slide {
-    flex: 0 0 420px;
-  }
+.container {
+  max-width: 1200px;
+  margin: 0 auto; /* Ye center karega content ko */
+  padding: 80px 20px;
+  width: 100%;
 }
 
-/* Mobile (max-width: 768px) */
+/* Contact form ko center karne ke liye */
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto; /* Center alignment */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-form input, 
+.contact-form textarea {
+  width: 100%; /* Full width within the form */
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+/* About Section Fix */
+.aboutsection-title {
+  font-size: 2.8rem;
+  color: var(--secondary-navy);
+  margin-bottom: 50px;
+  position: relative;
+}
+.aboutsection-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--gradient-accent);
+  border-radius: 2px;
+}
+
+
+/* About Us Alignment Fix */
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px; /* Space between text and image */
+}
+
+.about-text {
+    flex: 1; /* Occupy remaining space */
+}
+
+.about-image {
+    flex: 1;
+    text-align: right; /* Align image to the right on desktop */
+}
+.about-image img {
+  width: 100%;
+  max-width: 500px; /* Image ka size control karne ke liye */
+  height: auto;
+}
+/* --- Mobile Fix --- */
 @media (max-width: 768px) {
-  .container {
-    padding: 20px;
-  }
+    .about-container {
+        flex-direction: column-reverse; /* Stack image on top of text */
+        text-align: center; /* Center all content */
+    }
+    .about-image {
+        text-align: center; /* Center image */
+        margin-bottom: 30px; /* Add space below image */
+    }
+    .about-text {
+        padding: 0 15px; /* Add padding on sides */
+    }
+}
 
-  .hero {
-    padding: 60px 15px;
-  }
+/* =========================================
+   Portfolio Grid (4-Column Layout)
+   ========================================= */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns for desktop */
+    gap: 25px;
+    padding: 40px 0;
+}
 
-  .hero h1 {
-    font-size: 2rem;
-  }
-
-  .hero p {
-    font-size: 0.95rem;
-  }
-
-  .btn {
-    padding: 10px 18px;
-    font-size: 0.9rem;
-  }
-
-  .about-text h2 {
-    font-size: 1.8rem;
-  }
-
-  .about-text p {
-    font-size: 1rem;
-  }
-
-  .service-card img {
-    width: 100px;
-  }
-
-  .portfolio-slide {
-    flex: 0 0 320px;
-  }
-
-  .footer-container {
+.portfolio-item {
+    text-decoration: none; /* Link underline removal */
+    background: var(--white);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
     flex-direction: column;
-    text-align: center;
-    gap: 20px;
-  }
-
-  .footer-right {
-    margin-top: 10px;
-  }
 }
 
-/* Small Mobile (max-width: 480px) */
-@media (max-width: 480px) {
-  .hero h1 {
-    font-size: 1.6rem;
-  }
+.portfolio-item:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary-teal);
+    box-shadow: 0 15px 35px rgba(20, 133, 119, 0.15);
+}
 
-  .hero p {
-    font-size: 0.9rem;
-  }
+.portfolio-img-box {
+    width: 100%;
+    height: 200px; /* Fixed height for consistency */
+    background: #fcfcfc;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+}
 
-  .btn {
-    padding: 8px 15px;
-    font-size: 0.85rem;
-  }
+.portfolio-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Logos/Cards ke liye best taaki kate nahi */
+    transition: transform 0.5s ease;
+}
 
-  .about-text h2 {
-    font-size: 1.5rem;
-  }
+.portfolio-item:hover .portfolio-img-box img {
+    transform: scale(1.08);
+}
 
-  .about-image img {
-    max-width: 280px;
-  }
-
-  .service-card {
+.portfolio-caption {
     padding: 20px 15px;
-  }
+    text-align: center;
+    background: var(--white);
+    border-top: 1px solid #f0f0f0;
+}
 
-  .portfolio-slide {
-    flex: 0 0 260px;
-  }
+.portfolio-caption h3 {
+    font-size: 1rem;
+    color: var(--secondary-navy);
+    margin-bottom: 8px;
+    font-weight: 600;
+}
 
-  .portfolio-info p {
+.view-project {
     font-size: 0.85rem;
-  }
+    color: var(--primary-teal);
+    font-weight: 500;
+    display: inline-block;
+}
 
-  .footer-left h3 {
-    font-size: 1.4rem;
-  }
+/* Responsive Portfolio */
+@media (max-width: 1024px) {
+    .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+    .portfolio-grid { grid-template-columns: 1fr; }
+}
 
-  .footer-left p {
-    font-size: 0.8rem;
-  }
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--gradient-accent); /* Tere logo wala Teal gradient */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1000;
+    display: none; /* JS isse show karega */
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(20, 133, 119, 0.3);
+    transition: all 0.3s ease;
+}
+
+#scrollToTopBtn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(20, 133, 119, 0.5);
+}
+
+/* Jab WhatsApp button ke upar ho toh overlap na kare */
+@media (max-width: 768px) {
+    #scrollToTopBtn {
+        bottom: 100px; /* WhatsApp ke upar shift ho jayega mobile mein */
+    }
 }
 
 
+/* Featured Product Section */
+.featured-product {
+    background-color: var(--secondary-navy); /* Dark Navy from Logo */
+    padding: 100px 20px;
+    color: var(--white);
+    overflow: hidden;
+}
 
+.featured-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px; /* Space between content and image */
+}
+
+.featured-content {
+    flex: 1;
+}
+
+.featured-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.featured-image img {
+    width: 100%;
+    max-width: 550px;
+    filter: drop-shadow(0 20px 50px rgba(0,0,0,0.3));
+    transition: transform 0.5s ease;
+    border-radius:20px;
+}
+
+.featured-image:hover img {
+    transform: scale(1.03);
+}
+
+.badge {
+    background: var(--gradient-accent); /* Teal Gradient */
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.featured-content h2 {
+    font-size: 3rem;
+    margin: 20px 0 10px;
+}
+
+.highlight-teal {
+    color: var(--primary-teal); /* Teal from Logo */
+}
+
+.featured-content h3 {
+    font-size: 1.5rem;
+    color: #a0aec0;
+    margin-bottom: 20px;
+}
+
+.featured-content p {
+    font-size: 1.1rem;
+    color: #cbd5e0;
+    margin-bottom: 30px;
+    line-height: 1.8;
+}
+
+.feature-list {
+    list-style: none;
+    margin-bottom: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.feature-list li {
+    font-size: 0.95rem;
+    color: #e2e8f0;
+}
+
+/* Featured Section ke buttons ke liye specific style */
+.featured-buttons .btn-outline {
+    border-color: var(--white);
+    color: var(--white);
+}
+
+.featured-buttons .btn-outline:hover {
+    background: var(--white);
+    color: var(--secondary-navy);
+}
+
+/* Mobile Responsive */
+@media (max-width: 992px) {
+    .featured-container {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    .feature-list {
+        grid-template-columns: 1fr;
+        display: inline-block;
+        text-align: left;
+    }
+    .featured-content h2 { font-size: 2.2rem; }
+}
+
+/* Reviews Section Styling */
+.reviews {
+    background-color: var(--bg-light); /* */
+    padding: 100px 20px;
+    overflow: hidden; /* Slider bahar na nikal jaye */
+}
+
+/* Swiper specifically 3 cards ke liye space mangta hai */
+.reviews-slider {
+    padding: 40px 10px 80px !important; /* Bottom padding badha di dots ke liye */
+    position: relative;
+}
+
+.review-card {
+    height: 100%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Content aur client-info ke beech space rakhega */
+    padding: 40px 30px 50px; /* Card ke niche thoda extra space */
+    background: var(--white);
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    border: 1px solid rgba(20, 133, 119, 0.1);
+    min-height: 380px; /* Sabhi cards ki minimum height fix kar di */
+}
+.review-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary-teal); /* */
+    box-shadow: 0 15px 35px rgba(20, 133, 119, 0.15); /* */
+}
+
+.stars {
+    color: #ffc107;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.review-card p {
+    font-style: italic;
+    color: var(--text-gray); /* */
+    margin-bottom: 25px;
+    line-height: 1.7;
+    flex-grow: 1; /* Text chota ho ya bada, card barabar rahega */
+}
+
+.client-info h4 {
+    color: var(--secondary-navy); /* */
+    margin-bottom: 5px;
+}
+
+.client-info span {
+    font-size: 0.85rem;
+    color: var(--primary-teal); /* */
+    font-weight: 500;
+}
+
+/* Pagination Dots Customization */
+.swiper-pagination {
+    bottom: 10px !important; /* Slider container ke bottom se chipka diya */
+}
+
+.swiper-pagination-bullet-active {
+    background: var(--primary-teal) !important;
+    width: 25px; /* Active bullet thoda lamba dikhega premium vibe ke liye */
+    border-radius: 5px;
+}
+.swiper-slide {
+    height: auto; /* Cards ki height content ke hisaab se adjust hogi */
+    display: flex;
+    justify-content: center;
+}
+
+/* Lightbox Pop-up Styling */
+#portfolio-lightbox {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(16, 33, 48, 0.95); /* Tera Navy color */
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: zoom-out;
+}
+
+#portfolio-lightbox img {
+    max-width: 90%;
+    max-height: 85%;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(20, 133, 119, 0.5); /* Teal glow */
+    transition: transform 0.3s ease;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Portfolio item ko clickable dikhane ke liye pointer cursor */
+.portfolio-item {
+    cursor: pointer;
+}
