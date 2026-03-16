@@ -708,3 +708,55 @@ body {
 .portfolio-item {
     cursor: pointer;
 }
+
+/* Mobile Responsive Fixes */
+@media (max-width: 768px) {
+    
+    /* 1. Hero Title Fix */
+    .hero-section h1 {
+        font-size: 2.2rem !important; /* Font chota kiya taaki words fit ho jayein */
+        line-height: 1.2;
+        margin-bottom: 15px;
+    }
+
+    .hero-section p {
+        font-size: 1rem !important;
+        padding: 0 15px; /* Side se thoda space */
+    }
+
+    /* 2. Innovating Badge Fix */
+    .hero-section .badge {
+        font-size: 0.8rem;
+        padding: 5px 15px;
+    }
+
+    /* 3. Buttons Grid Fix */
+    /* Agar tu chahta hai ki buttons list ki jagah do-do ki row mein aayein */
+    .hero-buttons {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* 2 buttons ek row mein */
+        gap: 10px;
+        padding: 0 20px;
+    }
+
+    .btn {
+        padding: 10px 5px !important; /* Compact buttons */
+        font-size: 0.85rem !important;
+        width: 100% !important;
+        margin: 0 !important; /* Purane margins hata diye */
+    }
+
+    /* 4. WhatsApp & Scroll Top Buttons */
+    /* Taaki ye ek dusre ke upar na chadhien */
+    .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+    }
+
+    #scroll-top {
+        bottom: 80px; /* Thoda upar taaki WhatsApp button niche rahe */
+        right: 20px;
+    }
+}
