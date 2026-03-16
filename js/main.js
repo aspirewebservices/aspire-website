@@ -1,52 +1,67 @@
-// Scroll to Top Button functionality
 const scrollToTopBtn = document.getElementById('scrollToTopBtn');
 
-window.onscroll = function() {
-  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-    scrollToTopBtn.style.display = "block";
-  } else {
-    scrollToTopBtn.style.display = "none";
-  }
-};
-
-scrollToTopBtn.addEventListener('click', function() {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  });
+window.addEventListener('scroll', () => {
+    // Agar 300px se zyada scroll kiya toh dikhao
+    if (window.pageYOffset > 300) {
+        scrollToTopBtn.style.display = "flex";
+    } else {
+        scrollToTopBtn.style.display = "none";
+    }
 });
 
-const carousel = document.getElementById('portfolioCarousel');
-  let scrollAmount = 0;
-  let intervalId;
-
-  function autoSlide() {
-    if (scrollAmount <= carousel.scrollWidth - carousel.clientWidth) {
-      carousel.scrollTo({
-        left: scrollAmount,
+scrollToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
         behavior: 'smooth'
-      });
-      scrollAmount += 320; // Adjust this to match one card width + margin
-    } else {
-      scrollAmount = 0;
-      carousel.scrollTo({
-        left: 0,
-        behavior: 'smooth'
-      });
-    }
-  }
+    });
+});
+// Initialize Reviews Swiper
+const reviewsSwiper = new Swiper('.reviews-slider', {
+  slidesPerView: 1, // Mobile pe 1 card
+  spaceBetween: 20,
+  loop: true,
+  autoHeight: false,
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  // Ye part main hai 3 cards dikhane ke liye
+  breakpoints: {
+    640: {
+      slidesPerView: 1,
+      spaceBetween: 20,
+    },
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 30,
+    },
+    1024: {
+      slidesPerView: 3, // Desktop pe 3 cards pakka dikhenge
+      spaceBetween: 30,
+    },
+  },
+});
 
-  function startAutoSlide() {
-    intervalId = setInterval(autoSlide, 1000); // every 3 sec
-  }
 
-  function stopAutoSlide() {
-    clearInterval(intervalId);
-  }
+// Function to open Lightbox
+function openLightbox(imageSrc) {
+    const lightbox = document.getElementById('portfolio-lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    
+    lightboxImg.src = imageSrc;
+    lightbox.style.display = 'flex';
+}
 
-  // Start by default
-  startAutoSlide();
+// Function to close Lightbox
+function closeLightbox() {
+    document.getElementById('portfolio-lightbox').style.display = 'none';
+}
 
-  // Pause on hover
-  carousel.addEventListener('mouseenter', stopAutoSlide);
-  carousel.addEventListener('mouseleave', startAutoSlide);
+// Esc key se close karne ke liye (Optional but Pro)
+document.addEventListener('keydown', (e) => {
+    if (e.key === "Escape") closeLightbox();
+});
