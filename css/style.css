@@ -543,7 +543,7 @@ body {
 /* Featured Product Section */
 .featured-product {
     background-color: var(--secondary-navy); /* Dark Navy from Logo */
-    padding: 100px 20px;
+    padding: 60px 20px;
     color: var(--white);
     overflow: hidden;
 }
