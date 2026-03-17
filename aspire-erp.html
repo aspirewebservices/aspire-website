@@ -18,17 +18,14 @@
 
         body { font-family: 'Poppins', sans-serif; background: var(--white); color: #334155; margin: 0; line-height: 1.6; }
 
-        /* Hero Section - Gradient & Depth */
+        /* Hero Section */
         .erp-hero { 
             padding: 80px 20px 100px; 
             background: radial-gradient(circle at top right, #1a2e3f, var(--navy-dark));
             color: white; 
             text-align: center;
-            position: relative;
-            overflow: hidden;
         }
         
-        /* Glassy Badge */
         .price-badge { 
             background: rgba(255, 223, 0, 0.15);
             border: 1px solid #ffdf00;
@@ -38,7 +35,6 @@
             font-weight: 600; 
             font-size: 0.8rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
             display: inline-block;
             margin-bottom: 25px;
         }
@@ -46,110 +42,118 @@
         .erp-hero h1 { font-size: 3.5rem; margin-bottom: 25px; font-weight: 700; letter-spacing: -1px; }
         .erp-hero p { font-size: 1.1rem; max-width: 700px; margin: 0 auto 45px; opacity: 0.85; }
 
-        /* Perfect Rounded Buttons */
+        /* Buttons */
         .btn {
             display: inline-block;
-            padding: 16px 40px;
+            padding: 16px 35px;
             background: linear-gradient(135deg, var(--primary-teal), var(--accent-cyan));
-            color: white;
+            color: white !important;
             text-decoration: none;
-            border-radius: 50px; /* Fully Rounded */
+            border-radius: 50px;
             font-weight: 600;
-            transition: all 0.3s ease;
+            transition: 0.3s;
             box-shadow: 0 10px 20px rgba(20, 133, 119, 0.2);
+            border: none;
+            text-align: center;
         }
-        .btn:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(20, 133, 119, 0.3); opacity: 0.9; }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(20, 133, 119, 0.3); }
         
+        /* Outline Button Fix - Text will be Teal now */
         .btn-outline { 
-            background: transparent; 
-            border: 2px solid white; 
+            background: transparent !important; 
+            border: 2px solid var(--primary-teal) !important; 
+            color: var(--primary-teal) !important; 
             box-shadow: none;
         }
-        .btn-outline:hover { background: white; color: var(--navy-dark); }
+        .btn-outline:hover { background: var(--primary-teal) !important; color: white !important; }
 
-        /* Features Section */
-        .feature-container { padding: 100px 20px; max-width: 1200px; margin: 0 auto; }
-        .section-title { text-align: center; margin-bottom: 60px; font-size: 2.5rem; color: var(--navy-dark); }
+        /* White Outline for Hero Only */
+        .erp-hero .btn-outline { border-color: white !important; color: white !important; }
+        .erp-hero .btn-outline:hover { background: white !important; color: var(--navy-dark) !important; }
+
+        /* Features */
+        .feature-container { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
+        .section-title { text-align: center; margin-bottom: 50px; font-size: 2.5rem; color: var(--navy-dark); }
         .highlight { color: var(--primary-teal); }
 
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
+        .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
         .feature-box {
             background: var(--white);
-            padding: 45px 35px;
+            padding: 40px;
             border-radius: 24px;
             border: 1px solid rgba(0,0,0,0.03);
             box-shadow: var(--shadow);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
+            transition: 0.3s;
         }
-        .feature-box:hover { transform: translateY(-12px); border-color: var(--primary-teal); }
-        
-        .feature-box h4 { font-size: 1.3rem; color: var(--navy-dark); margin-bottom: 15px; font-weight: 600; }
-        .feature-box p { font-size: 0.95rem; color: #64748b; }
+        .feature-box:hover { transform: translateY(-10px); border-color: var(--primary-teal); }
 
-        /* Pricing Cards Evolution */
+        /* Pricing Section */
         .pricing-section { background: var(--light-bg); padding: 100px 20px; }
         .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
-            max-width: 950px;
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            gap: 30px;
+            max-width: 1000px;
             margin: 0 auto;
         }
         .price-card {
+            flex: 1;
             background: white;
-            padding: 60px 45px;
+            padding: 50px 30px;
             border-radius: 32px;
             text-align: center;
             box-shadow: var(--shadow);
             border: 1px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            position: relative;
             transition: 0.3s;
         }
         .price-card.featured {
             border: 3px solid var(--primary-teal);
-            transform: scale(1.05);
-            background: linear-gradient(to bottom, #ffffff, #f0fdfa);
+            transform: translateY(-15px);
+            z-index: 2;
         }
         .popular-label {
             position: absolute;
-            top: -18px;
+            top: -15px;
             left: 50%;
             transform: translateX(-50%);
             background: var(--primary-teal);
             color: white;
-            padding: 6px 25px;
+            padding: 5px 20px;
             border-radius: 50px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 1px;
+            font-size: 0.8rem;
+            font-weight: bold;
         }
 
-        .price { font-size: 3rem; font-weight: 700; color: var(--navy-dark); margin: 25px 0; }
+        /* Price Text Alignment */
+        .price { font-size: 2.8rem; font-weight: 700; color: var(--navy-dark); margin: 20px 0; display: flex; align-items: baseline; justify-content: center; gap: 8px; }
         .price span { font-size: 1.1rem; color: #94a3b8; font-weight: 400; }
 
-        .price-list { list-style: none; padding: 0; margin: 35px 0; }
-        .price-list li { margin-bottom: 16px; font-size: 1rem; color: #475569; display: flex; align-items: center; justify-content: center; gap: 12px; }
-        .price-list li::before { content: "✓"; color: var(--primary-teal); font-weight: 900; }
+        .price-list { list-style: none; padding: 0; margin: 0 0 40px 0; flex-grow: 1; text-align: left; display: inline-block; width: fit-content; margin-left: auto; margin-right: auto; }
+        .price-list li { margin-bottom: 12px; font-size: 0.95rem; display: flex; align-items: center; gap: 10px; color: #475569; }
+        .price-list li::before { content: "✓"; color: var(--primary-teal); font-weight: bold; }
 
-        /* Responsive Fixes */
+        .price-card .btn { width: 100%; margin-top: auto; box-sizing: border-box; }
+
+        /* FAQ */
+        #faq { padding: 80px 20px; background: white; }
+        .faq-grid { max-width: 800px; margin: 0 auto; }
+
+        /* Mobile Adjustments */
         @media (max-width: 992px) {
             .feature-grid { grid-template-columns: repeat(2, 1fr); }
-            .erp-hero h1 { font-size: 2.8rem; }
-            .pricing-grid { gap: 20px; }
+            .pricing-grid { flex-direction: column; align-items: center; }
+            .price-card { width: 100%; max-width: 400px; transform: none !important; }
         }
         @media (max-width: 768px) {
-            .feature-grid, .pricing-grid { grid-template-columns: 1fr; }
             .erp-hero h1 { font-size: 2.2rem; }
-            .price-card.featured { transform: scale(1); margin-top: 40px; }
-            .btn { width: 80%; margin: 10px; }
-            .hero-btns { display: flex; flex-direction: column; align-items: center; }
-            .feature-container { padding: 60px 20px;}
-
-        }    
+            .hero-btns { display: flex; flex-direction: column; align-items: center; gap: 15px; }
+            .hero-btns .btn { width: 100%; margin: 0 !important; }
+            .feature-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
@@ -158,7 +162,7 @@
         <div class="container">
             <span class="price-badge">Premium School Management</span>
             <h1>Aspire ERP: <span style="color: var(--accent-cyan);">Intelligent</span> Schooling</h1>
-            <p>The only cloud-based ERP you need to manage admissions, fees, and parent communication in one seamless dashboard.</p>
+            <p>A comprehensive cloud-based solution to manage admissions, fee collection, and parent engagement in one seamless dashboard.</p>
             <div class="hero-btns">
                 <a href="https://wa.me/919707843381?text=Hi, I want a free demo of Aspire ERP" class="btn">Book Free Demo</a>
                 <a href="#features" class="btn btn-outline" style="margin-left: 10px;">Explore Features</a>
@@ -208,9 +212,9 @@
                         <li>Up to 200 Students</li>
                         <li>Core Modules Included</li>
                         <li>Detailed Reports</li>
-                        <li>Priority Support</li>
+                        <li>Priority WhatsApp Support</li>
                     </ul>
-                    <a href="https://wa.me/919707843381?text=Interested in Standard Plan" class="btn btn-outline" style="color: var(--primary-teal); border-color: var(--primary-teal);">Choose Standard</a>
+                    <a href="https://wa.me/919707843381?text=Interested in Standard Plan" class="btn btn-outline">Choose Standard</a>
                 </div>
 
                 <div class="price-card featured">
@@ -219,7 +223,7 @@
                     <div class="price">₹25,000 <span>/ year</span></div>
                     <ul class="price-list">
                         <li>Unlimited Students</li>
-                        <li>Parent Portal</li>
+                        <li>Parent Portal App</li>
                         <li>Auto-Fee Reminders</li>
                         <li>Dedicated Manager</li>
                     </ul>
@@ -230,43 +234,30 @@
         </div>
     </section>
 
-<section id="faq" style="padding: 100px 20px; background: white;">
-    <div class="container" style="max-width: 800px; margin: 0 auto;">
-        <h2 class="section-title">Frequently Asked <span class="highlight">Questions</span></h2>
-        
+    <section id="faq">
         <div class="faq-grid">
+            <h2 class="section-title">Frequently Asked <span class="highlight">Questions</span></h2>
             <div class="faq-item">
-                <h4 style="color: var(--navy-dark); margin-bottom: 10px;">Is our school data safe and secure?</h4>
-                <p style="color: #64748b; font-size: 0.95rem;">Yes, absolutely. Aspire ERP uses high-level encryption and secure cloud servers with daily backups to ensure your data is always protected.</p>
+                <h4>Is our school data safe and secure?</h4>
+                <p>Yes, absolutely. Aspire ERP uses high-level encryption and secure cloud servers with daily backups to ensure your data is always protected.</p>
             </div>
             <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
-            
             <div class="faq-item">
-                <h4 style="color: var(--navy-dark); margin-bottom: 10px;">Do we get training on how to use the software?</h4>
-                <p style="color: #64748b; font-size: 0.95rem;">Yes! We provide complete training to your staff and teachers. Our team will guide you through every module until you are comfortable.</p>
+                <h4>Do we get training on how to use the software?</h4>
+                <p>Yes! We provide complete training to your staff and teachers until you are comfortable.</p>
             </div>
             <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
-
             <div class="faq-item">
-                <h4 style="color: var(--navy-dark); margin-bottom: 10px;">Can we customize the ERP for our school needs?</h4>
-                <p style="color: #64748b; font-size: 0.95rem;">We offer flexible modules. If your school has specific requirements, our team can customize certain features to fit your workflow.</p>
-            </div>
-            <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
-
-            <div class="faq-item">
-                <h4 style="color: var(--navy-dark); margin-bottom: 10px;">What kind of support do you provide?</h4>
-                <p style="color: #64748b; font-size: 0.95rem;">We provide dedicated WhatsApp and call support from 10 AM to 6 PM. Premium members also get a dedicated technical manager.</p>
+                <h4>What kind of support do you provide?</h4>
+                <p>We provide dedicated WhatsApp and call support from 10 AM to 6 PM.</p>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-    <section style="padding: 100px 20px; text-align: center; background: var(--navy-dark); color: white;">
-        <div class="container">
-            <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Still Unsure?</h2>
-            <p style="margin-bottom: 40px; opacity: 0.7; max-width: 600px; margin-left: auto; margin-right: auto;">Join 50+ schools that have transformed their operations with Aspire ERP.</p>
-            <a href="https://wa.me/919707843381" class="btn" style="background: white; color: var(--navy-dark); box-shadow: none;">Talk to an Expert</a>
-        </div>
+    <section style="padding: 80px 20px; text-align: center; background: var(--navy-dark); color: white;">
+        <h2>Ready to Transform Your School?</h2>
+        <p style="margin-bottom: 30px; opacity: 0.8;">Join 50+ schools that have automated their workflow with Aspire ERP.</p>
+        <a href="https://wa.me/919707843381" class="btn" style="background: white; color: var(--navy-dark) !important; box-shadow: none;">Talk to an Expert</a>
     </section>
 
 </body>
