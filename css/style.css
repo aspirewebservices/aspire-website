@@ -368,39 +368,58 @@ body {
 @media (max-width: 768px) {
 
   .about-container {
-       display: flex;
-        flex-direction: column; /* Image upar, text niche */
-        align-items: center;
-        text-align: center;
+        display: flex !important;
+        flex-direction: column !important; 
+        align-items: center !important;
+        text-align: center !important;
+        gap: 20px !important;
+        padding: 40px 15px !important;
     }
 
+    /* 2. Title aur Teal Line ko center kiya */
     .aboutsection-title {
-       font-size: 2.5rem !important;
+        font-size: 2.2rem !important;
         text-align: center !important;
-        display: block !important;
-        width: 100%;
-        margin-bottom: 30px;
+        width: 100% !important;
+        margin-bottom: 40px !important;
     }
 
     .aboutsection-title::after {
-      left: 50% !important;
+        content: '';
+        position: absolute;
+        left: 50% !important;
         transform: translateX(-50%) !important;
-        bottom: -10px;
+        bottom: -15px !important;
+        width: 60px !important;
     }
 
-    .about p {
+    /* 3. Image ko Order -1 dekar sabse upar laya */
+    .about-image {
+        order: -1 !important; /* Ye div ko upar fekega */
+        width: 100% !important;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .about-image img {
+        width: 90% !important; /* Image ko bada aur saaf kiya */
+        max-width: 320px !important;
+        height: auto !important;
+    }
+
+    /* 4. Text alignment */
+    .about-text {
+        width: 100% !important;
+    }
+
+    .about-text p {
         font-size: 1rem !important;
         line-height: 1.6;
-        padding: 0 10px;
+        padding: 0 5px;
         margin-bottom: 20px;
         text-align: center;
     }
-  .about-image img {
-        width: 80% !important; /* Image ko bada kiya */
-        max-width: 300px;
-        margin-bottom: 20px; /* Text se gap */
-        order: -1; /* Image ko text se upar le aayega */
-}
 }
 
 /* =========================================
