@@ -674,12 +674,6 @@ body {
         color: #e2e8f0;
     }
 
-    /* Agar tu FontAwesome ya Symbols use kar raha hai toh unhe highlight kar */
-    .feature-list li::before {
-        content: '✔';
-        color: var(--primary-teal);
-        font-weight: bold;
-    }
 
     /* Buttons spacing */
     .featured-buttons {
