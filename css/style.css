@@ -393,7 +393,7 @@ body {
         position: absolute;
         left: 50% !important;
         transform: translateX(-50%) !important;
-        bottom: -15px !important;
+        bottom: 15px !important;
         width: 60px !important;
     }
 
