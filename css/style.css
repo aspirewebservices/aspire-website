@@ -633,17 +633,74 @@ body {
 }
 
 /* Mobile Responsive */
+/* Mobile Responsive Fix for Featured Section */
 @media (max-width: 992px) {
+    .featured-product {
+        padding: 60px 15px !important;
+    }
+
     .featured-container {
-        flex-direction: column-reverse;
+        flex-direction: column-reverse; /* Image niche, content upar */
         text-align: center;
+        gap: 30px;
     }
+
+    .featured-content h2 { 
+        font-size: 2rem !important; 
+        line-height: 1.2;
+    }
+
+    .featured-content h3 {
+        font-size: 1.2rem !important;
+        margin-bottom: 15px;
+    }
+
+    /* --- List Alignment Fix --- */
     .feature-list {
-        grid-template-columns: 1fr;
-        display: inline-block;
-        text-align: left;
+        display: inline-flex !important; /* Container ko center karne ke liye */
+        flex-direction: column;
+        text-align: left; /* Text ko left-align rakhega */
+        margin: 0 auto 30px; /* Center alignment for the list block */
+        padding: 0;
+        grid-template-columns: 1fr; /* Force single column on mobile */
     }
-    .featured-content h2 { font-size: 2.2rem; }
+
+    .feature-list li {
+        font-size: 1rem !important;
+        margin-bottom: 12px;
+        display: flex; /* Tick aur text ko line mein lane ke liye */
+        align-items: flex-start;
+        gap: 10px;
+        color: #e2e8f0;
+    }
+
+    /* Agar tu FontAwesome ya Symbols use kar raha hai toh unhe highlight kar */
+    .feature-list li::before {
+        content: '✔';
+        color: var(--primary-teal);
+        font-weight: bold;
+    }
+
+    /* Buttons spacing */
+    .featured-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .featured-buttons .btn {
+        width: 100% !important;
+        margin: 0 !important;
+    }
+
+    /* Image responsive scale */
+    .featured-image img {
+        max-width: 90%;
+        margin-top: 20px;
+    }
 }
 
 /* Reviews Section Styling */
