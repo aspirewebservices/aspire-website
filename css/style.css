@@ -189,7 +189,7 @@ body {
     width: 110px; /* Size thoda badhaya */
     height: auto;
     margin-bottom: 25px;
-    filter: drop-shadow(0 5px 10px rgba(0,0,0,0.05)); /* Image pe subtle shadow */
+    /*filter: drop-shadow(0 5px 10px rgba(0,0,0,0.05));*/ /* Image pe subtle shadow */
 }
 
 .service-card h3 {
