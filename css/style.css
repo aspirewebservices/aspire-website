@@ -111,94 +111,98 @@ body {
 }
 
 /* Services Section */
+/* Services Section */
 .services {
-    background-color: #f9fbff; /* Light gray-blue background taaki white cards dikhein */
+    background-color: #f9fbff; 
     padding: 80px 20px;
 }
+
+/* Title Chamak Fix */
 .section-title {
   text-align: center;
   font-size: 2.8rem;
-  color: var(--secondary-navy);
+  color: #102130; /* Directly using your Navy */
   margin-bottom: 50px;
   position: relative;
+  font-weight: 700;
 }
 
 .section-title::after {
   content: '';
   display: block;
-  width: 60px;
-  height: 4px;
-  background: var(--gradient-accent);
+  width: 80px; /* Thoda bada line */
+  height: 5px;
+  background: linear-gradient(to right, #148577, #26d0ce); /* Teal Gradient */
   margin: 15px auto 0;
-  border-radius: 2px;
+  border-radius: 10px;
 }
 
 .services-grid {
     display: grid;
-    /* 4 columns setup for desktop, automatically adjusts for smaller screens */
     grid-template-columns: repeat(4, 1fr); 
-    gap: 20px;
+    gap: 25px; /* Gap thoda badhaya */
     padding: 20px 0;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-/* Tablets ke liye 2-2 ka grid (800px ke aaspass) */
+/* Tablet Fix */
 @media (max-width: 1024px) {
     .services-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-/* Mobile ke liye single column */
+/* Mobile Fix (Jo humne discuss kiya tha) */
 @media (max-width: 600px) {
     .services-grid {
         grid-template-columns: 1fr;
+        gap: 30px; /* Mobile pe cards ke beech gap */
+    }
+    .section-title {
+        font-size: 2.2rem;
     }
 }
 
 .service-card {
     background: #ffffff;
-    border-radius: 20px; /* Perfect Rounded Corners */
-    padding: 30px 20px; /* Thoda kam horizontal padding taaki content fit ho */
-    height: 100%; /* Saare cards ki height barabar rahegi */
+    border-radius: 24px; /* More modern rounded corners */
+    padding: 40px 25px; /* Padding badhayi taaki "Breathable" lage */
+    height: 100%;
     text-align: center;
-    border: 1px solid rgba(0, 0, 0, 0.03); /* Very subtle border */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); /* Soft shadow for visibility */
-    transition: all 0.4s ease;
+    border: 1px solid rgba(20, 133, 119, 0.08); /* Light Teal border */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.04); /* Soft professional shadow */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Smooth pop effect */
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
-
 }
 
-/* Hover Effect - Aspire Brand Colors */
+/* Hover Effect - Jo "Premium" feel dega */
 .service-card:hover {
-    transform: translateY(-10px);
-    border-color: #148577; /* Logo ka Teal color */
-    box-shadow: 0 15px 35px rgba(20, 133, 119, 0.15); /* Teal glow */
+    transform: translateY(-12px);
+    border-color: #148577;
+    box-shadow: 0 20px 40px rgba(20, 133, 119, 0.12);
 }
 
 .service-card img {
-    width: 100px; /* Icon size set */
+    width: 110px; /* Size thoda badhaya */
     height: auto;
-    margin-bottom: 20px;
-    transition: transform 0.3s ease;
-}
-
-.service-card:hover img {
-    transform: scale(1.1); /* Hover pe icon thoda bada hoga */
+    margin-bottom: 25px;
+    filter: drop-shadow(0 5px 10px rgba(0,0,0,0.05)); /* Image pe subtle shadow */
 }
 
 .service-card h3 {
-    font-size: 1.15rem; /* Font thoda chota desktop ke liye */
-   color: #102130; /* Logo ka Navy Blue */
-    margin-top: 15px;
+    font-size: 1.3rem; /* Desktop pe thoda bada aur readable */
+    color: #102130;
+    font-weight: 600;
+    margin-bottom: 15px;
 }
 
 .service-card p {
-    font-size: 0.9rem;
-    color: #555;
-    line-height: 1.5;
+    font-size: 0.95rem;
+    color: #5f6c7b; /* Soft gray for better readability */
+    line-height: 1.6;
 }
 
 /* =========================================
