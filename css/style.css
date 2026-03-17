@@ -635,9 +635,9 @@ body {
 
 /* Mobile Responsive */
 /* Mobile Responsive Fix for Featured Section */
-@media (max-width: 992px) {
+@media (max-width: 768px) {
     .featured-product {
-        padding: 60px 15px !important;
+        padding: 20px 15px !important;
     }
 
     .featured-container {
