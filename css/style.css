@@ -393,7 +393,7 @@ body {
         position: absolute;
         left: 50% !important;
         transform: translateX(-50%) !important;
-        bottom: 15px !important;
+        bottom: -15px !important;
         width: 60px !important;
     }
 
@@ -420,6 +420,7 @@ body {
     .about-text p {
         font-size: 1rem !important;
         line-height: 1.6;
+        padding-top: 10px;
         padding: 0 5px;
         margin-bottom: 20px;
         text-align: center;
