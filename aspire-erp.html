@@ -3,43 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aspire ERP | Professional School Management Software</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Aspire ERP | Modern School Management System</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
             --primary-teal: #148577;
+            --accent-cyan: #26d0ce;
             --navy-dark: #102130;
-            --light-bg: #f4f7f9;
+            --light-bg: #f8fafc;
+            --white: #ffffff;
+            --shadow: 0 15px 35px rgba(0,0,0,0.08);
         }
 
-        body { font-family: 'Poppins', sans-serif; background: #fff; color: #333; margin: 0; }
+        body { font-family: 'Poppins', sans-serif; background: var(--white); color: #334155; margin: 0; line-height: 1.6; }
 
-        /* Hero Section */
+        /* Hero Section - Gradient & Depth */
         .erp-hero { 
-            padding: 120px 20px 80px; 
-            background: linear-gradient(135deg, var(--navy-dark) 0%, #1a2e3f 100%); 
+            padding: 140px 20px 100px; 
+            background: radial-gradient(circle at top right, #1a2e3f, var(--navy-dark));
             color: white; 
-            text-align: center; 
+            text-align: center;
+            position: relative;
+            overflow: hidden;
         }
+        
+        /* Glassy Badge */
         .price-badge { 
-            background: #ffdf00; 
-            color: #102130; 
-            padding: 6px 18px; 
+            background: rgba(255, 223, 0, 0.15);
+            border: 1px solid #ffdf00;
+            color: #ffdf00;
+            padding: 8px 24px; 
             border-radius: 50px; 
-            font-weight: bold; 
-            font-size: 0.85rem;
+            font-weight: 600; 
+            font-size: 0.8rem;
             text-transform: uppercase;
+            letter-spacing: 1px;
             display: inline-block;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
-        .erp-hero h1 { font-size: 3rem; margin-bottom: 20px; }
-        .erp-hero p { font-size: 1.2rem; max-width: 800px; margin: 0 auto 40px; opacity: 0.9; }
 
-        /* Features Grid */
-        .feature-container { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
-        .section-title { text-align: center; margin-bottom: 50px; font-size: 2.2rem; }
+        .erp-hero h1 { font-size: 3.5rem; margin-bottom: 25px; font-weight: 700; letter-spacing: -1px; }
+        .erp-hero p { font-size: 1.1rem; max-width: 700px; margin: 0 auto 45px; opacity: 0.85; }
+
+        /* Perfect Rounded Buttons */
+        .btn {
+            display: inline-block;
+            padding: 16px 40px;
+            background: linear-gradient(135deg, var(--primary-teal), var(--accent-cyan));
+            color: white;
+            text-decoration: none;
+            border-radius: 50px; /* Fully Rounded */
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(20, 133, 119, 0.2);
+        }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(20, 133, 119, 0.3); opacity: 0.9; }
+        
+        .btn-outline { 
+            background: transparent; 
+            border: 2px solid white; 
+            box-shadow: none;
+        }
+        .btn-outline:hover { background: white; color: var(--navy-dark); }
+
+        /* Features Section */
+        .feature-container { padding: 100px 20px; max-width: 1200px; margin: 0 auto; }
+        .section-title { text-align: center; margin-bottom: 60px; font-size: 2.5rem; color: var(--navy-dark); }
         .highlight { color: var(--primary-teal); }
 
         .feature-grid {
@@ -48,80 +78,75 @@
             gap: 30px;
         }
         .feature-box {
-            background: #fff;
-            padding: 40px 30px;
-            border-radius: 15px;
-            border-top: 5px solid var(--primary-teal);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transition: 0.3s;
+            background: var(--white);
+            padding: 45px 35px;
+            border-radius: 24px;
+            border: 1px solid rgba(0,0,0,0.03);
+            box-shadow: var(--shadow);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
         }
-        .feature-box:hover { transform: translateY(-10px); }
-        .feature-box h4 { font-size: 1.25rem; color: var(--navy-dark); margin-bottom: 15px; }
-        .feature-box p { font-size: 0.95rem; color: #666; line-height: 1.6; }
+        .feature-box:hover { transform: translateY(-12px); border-color: var(--primary-teal); }
+        
+        .feature-box h4 { font-size: 1.3rem; color: var(--navy-dark); margin-bottom: 15px; font-weight: 600; }
+        .feature-box p { font-size: 0.95rem; color: #64748b; }
 
-        /* Pricing Section */
-        .pricing-section { background: var(--light-bg); padding: 80px 20px; }
+        /* Pricing Cards Evolution */
+        .pricing-section { background: var(--light-bg); padding: 100px 20px; }
         .pricing-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-            max-width: 900px;
+            gap: 40px;
+            max-width: 950px;
             margin: 0 auto;
         }
         .price-card {
             background: white;
-            padding: 50px 40px;
-            border-radius: 20px;
+            padding: 60px 45px;
+            border-radius: 32px;
             text-align: center;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-            border: 1px solid #eee;
+            box-shadow: var(--shadow);
+            border: 1px solid #e2e8f0;
+            transition: 0.3s;
         }
         .price-card.featured {
-            border: 2px solid var(--primary-teal);
-            position: relative;
+            border: 3px solid var(--primary-teal);
             transform: scale(1.05);
+            background: linear-gradient(to bottom, #ffffff, #f0fdfa);
         }
         .popular-label {
             position: absolute;
-            top: -15px;
+            top: -18px;
             left: 50%;
             transform: translateX(-50%);
             background: var(--primary-teal);
             color: white;
-            padding: 5px 20px;
+            padding: 6px 25px;
             border-radius: 50px;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1px;
         }
-        .price { font-size: 2.5rem; font-weight: 700; color: var(--navy-dark); margin: 20px 0; }
-        .price span { font-size: 1rem; color: #777; font-weight: 400; }
 
-        .price-list { list-style: none; padding: 0; margin: 30px 0; text-align: left; }
-        .price-list li { margin-bottom: 12px; font-size: 0.95rem; display: flex; align-items: center; gap: 10px; }
-        .price-list li::before { content: "✔"; color: var(--primary-teal); font-weight: bold; }
+        .price { font-size: 3rem; font-weight: 700; color: var(--navy-dark); margin: 25px 0; }
+        .price span { font-size: 1.1rem; color: #94a3b8; font-weight: 400; }
 
-        /* Common Button */
-        .btn {
-            display: inline-block;
-            padding: 15px 35px;
-            background: var(--primary-teal);
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: 0.3s;
-        }
-        .btn:hover { opacity: 0.9; transform: scale(1.02); }
-        .btn-outline { background: transparent; border: 2px solid white; }
+        .price-list { list-style: none; padding: 0; margin: 35px 0; }
+        .price-list li { margin-bottom: 16px; font-size: 1rem; color: #475569; display: flex; align-items: center; justify-content: center; gap: 12px; }
+        .price-list li::before { content: "✓"; color: var(--primary-teal); font-weight: 900; }
 
-        /* Responsive */
+        /* Responsive Fixes */
         @media (max-width: 992px) {
             .feature-grid { grid-template-columns: repeat(2, 1fr); }
-            .erp-hero h1 { font-size: 2.2rem; }
+            .erp-hero h1 { font-size: 2.8rem; }
+            .pricing-grid { gap: 20px; }
         }
         @media (max-width: 768px) {
             .feature-grid, .pricing-grid { grid-template-columns: 1fr; }
-            .pricing-grid { max-width: 400px; }
-            .price-card.featured { transform: scale(1); margin-top: 30px; }
+            .erp-hero h1 { font-size: 2.2rem; }
+            .price-card.featured { transform: scale(1); margin-top: 40px; }
+            .btn { width: 80%; margin: 10px auto; }
+            .hero-btns { display: flex; flex-direction: column; align-items: center; }
         }
     </style>
 </head>
@@ -129,9 +154,9 @@
 
     <section class="erp-hero">
         <div class="container">
-            <span class="price-badge">Trusted by Preschools & Schools</span>
-            <h1>Aspire ERP: <span style="color: #26d0ce;">One Click</span> School Management</h1>
-            <p>Automate your school's daily operations—from fee collection to parent communication—with our high-performance cloud ERP solution.</p>
+            <span class="price-badge">Premium School Management</span>
+            <h1>Aspire ERP: <span style="color: var(--accent-cyan);">Intelligent</span> Schooling</h1>
+            <p>The only cloud-based ERP you need to manage admissions, fees, and parent communication in one seamless dashboard.</p>
             <div class="hero-btns">
                 <a href="https://wa.me/919707843381?text=Hi, I want a free demo of Aspire ERP" class="btn">Book Free Demo</a>
                 <a href="#features" class="btn btn-outline" style="margin-left: 10px;">Explore Features</a>
@@ -140,74 +165,105 @@
     </section>
 
     <section id="features" class="feature-container">
-        <h2 class="section-title">Why Choose <span class="highlight">Aspire ERP?</span></h2>
+        <h2 class="section-title">Built for <span class="highlight">Efficiency</span></h2>
         <div class="feature-grid">
             <div class="feature-box">
-                <h4>Parent Portal (Mobile App)</h4>
-                <p>Allow parents to track attendance, homework, and performance anytime, anywhere via our dedicated mobile app.</p>
+                <h4>Parent Portal</h4>
+                <p>Real-time updates on attendance and performance for higher parent satisfaction.</p>
             </div>
             <div class="feature-box">
-                <h4>Smart Fee Management</h4>
-                <p>Automatic receipt generation, pending fee alerts via SMS, and detailed financial reporting at your fingertips.</p>
+                <h4>Smart Fees</h4>
+                <p>Automated collection and reminders. Reduce pending fees by up to 40%.</p>
             </div>
             <div class="feature-box">
-                <h4>Staff & Student Attendance</h4>
-                <p>Digital attendance tracking with instant notifications to parents for absentees, ensuring better safety.</p>
+                <h4>Live Attendance</h4>
+                <p>Instant Whatsapp alerts for absentees. Ensure 100% student safety.</p>
             </div>
             <div class="feature-box">
-                <h4>Automatic Timetable</h4>
-                <p>Say goodbye to manual errors. Generate conflict-free timetables for multiple classes and teachers instantly.</p>
+                <h4>Timetable Management</h4>
+                <p>Create complex schedules in minutes, not days. Error-free and flexible.</p>
             </div>
             <div class="feature-box">
-                <h4>Digital Notice Board</h4>
-                <p>Send digital circulars, holiday announcements, and event updates to all parents with a single click.</p>
+                <h4>Digital Notice</h4>
+                <p>Go paperless. Broadcast circulars and events directly to mobile phones.</p>
             </div>
             <div class="feature-box">
-                <h4>Admission Inquiries</h4>
-                <p>Track new admissions, manage lead follow-ups, and convert inquiries into registrations effortlessly.</p>
+                <h4>Admissions</h4>
+                <p>Convert leads into enrollments with a built-in inquiry tracking system.</p>
             </div>
         </div>
     </section>
 
     <section class="pricing-section">
         <div class="container">
-            <h2 class="section-title">Affordable <span class="highlight">Pricing Plans</span></h2>
+            <h2 class="section-title">Investment <span class="highlight">Plans</span></h2>
             <div class="pricing-grid">
                 
                 <div class="price-card">
-                    <h3>Standard Plan</h3>
+                    <h3>Standard</h3>
                     <div class="price">₹15,000 <span>/ year</span></div>
                     <ul class="price-list">
                         <li>Up to 200 Students</li>
-                        <li>Core Management Modules</li>
-                        <li>Basic Reporting</li>
-                        <li>Standard Support</li>
+                        <li>Core Modules Included</li>
+                        <li>Detailed Reports</li>
+                        <li>Priority Support</li>
                     </ul>
-                    <a href="https://wa.me/919707843381?text=Interested in Standard Plan" class="btn btn-outline" style="color: var(--primary-teal); border-color: var(--primary-teal); width: 80%;">Choose Plan</a>
+                    <a href="https://wa.me/919707843381?text=Interested in Standard Plan" class="btn btn-outline" style="color: var(--primary-teal); border-color: var(--primary-teal);">Choose Standard</a>
                 </div>
 
                 <div class="price-card featured">
-                    <div class="popular-label">MOST POPULAR</div>
-                    <h3>Premium Plan</h3>
+                    <div class="popular-label">BEST VALUE</div>
+                    <h3>Premium</h3>
                     <div class="price">₹25,000 <span>/ year</span></div>
                     <ul class="price-list">
                         <li>Unlimited Students</li>
-                        <li>Mobile App for Parents</li>
-                        <li>Automated Fee Reminders</li>
-                        <li>Priority WhatsApp Support</li>
+                        <li>Parent Portal</li>
+                        <li>Auto-Fee Reminders</li>
+                        <li>Dedicated Manager</li>
                     </ul>
-                    <a href="https://wa.me/919707843381?text=Interested in Premium Plan" class="btn" style="width: 80%;">Choose Plan</a>
+                    <a href="https://wa.me/919707843381?text=Interested in Premium Plan" class="btn">Choose Premium</a>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <section style="padding: 80px 20px; text-align: center; background: var(--navy-dark); color: white;">
+<section id="faq" style="padding: 100px 20px; background: white;">
+    <div class="container" style="max-width: 800px; margin: 0 auto;">
+        <h2 class="section-title">Frequently Asked <span class="highlight">Questions</span></h2>
+        
+        <div class="faq-grid">
+            <div class="faq-item">
+                <h4 style="color: var(--navy-dark); margin-bottom: 10px;">Is our school data safe and secure?</h4>
+                <p style="color: #64748b; font-size: 0.95rem;">Yes, absolutely. Aspire ERP uses high-level encryption and secure cloud servers with daily backups to ensure your data is always protected.</p>
+            </div>
+            <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
+            
+            <div class="faq-item">
+                <h4 style="color: var(--navy-dark); margin-bottom: 10px;">Do we get training on how to use the software?</h4>
+                <p style="color: #64748b; font-size: 0.95rem;">Yes! We provide complete training to your staff and teachers. Our team will guide you through every module until you are comfortable.</p>
+            </div>
+            <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
+
+            <div class="faq-item">
+                <h4 style="color: var(--navy-dark); margin-bottom: 10px;">Can we customize the ERP for our school needs?</h4>
+                <p style="color: #64748b; font-size: 0.95rem;">We offer flexible modules. If your school has specific requirements, our team can customize certain features to fit your workflow.</p>
+            </div>
+            <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
+
+            <div class="faq-item">
+                <h4 style="color: var(--navy-dark); margin-bottom: 10px;">What kind of support do you provide?</h4>
+                <p style="color: #64748b; font-size: 0.95rem;">We provide dedicated WhatsApp and call support from 10 AM to 6 PM. Premium members also get a dedicated technical manager.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section style="padding: 100px 20px; text-align: center; background: var(--navy-dark); color: white;">
         <div class="container">
-            <h2>Need a Custom Solution for Your School?</h2>
-            <p style="margin-bottom: 30px; opacity: 0.8;">Contact us for a tailored ERP setup according to your institution's needs.</p>
-            <a href="https://wa.me/919707843381" class="btn">Talk to Our Expert</a>
+            <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Still Unsure?</h2>
+            <p style="margin-bottom: 40px; opacity: 0.7; max-width: 600px; margin-left: auto; margin-right: auto;">Join 50+ schools that have transformed their operations with Aspire ERP.</p>
+            <a href="https://wa.me/919707843381" class="btn" style="background: white; color: var(--navy-dark); box-shadow: none;">Talk to an Expert</a>
         </div>
     </section>
 
