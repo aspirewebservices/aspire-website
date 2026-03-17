@@ -368,28 +368,39 @@ body {
 @media (max-width: 768px) {
 
   .about-container {
-        padding: 80px 25px !important; /* Symmetric, generous padding on sides */
+       display: flex;
+        flex-direction: column; /* Image upar, text niche */
+        align-items: center;
         text-align: center;
-        background: radial-gradient(circle, rgba(20, 133, 119, 0.05) 0%, rgba(255, 255, 255, 0) 70%); /* Subtle sparkle gradient */
     }
 
     .aboutsection-title {
-        font-size: 3rem !important; /* Very bold, modern heading */
-        color: #102130;
+       font-size: 2.5rem !important;
+        text-align: center !important;
+        display: block !important;
+        width: 100%;
+        margin-bottom: 30px;
     }
 
     .aboutsection-title::after {
-        left: 50% !important;
+      left: 50% !important;
         transform: translateX(-50%) !important;
-        width: 100px !important; /* Elegant scaled line */
+        bottom: -10px;
     }
 
     .about p {
         font-size: 1rem !important;
-        line-height: 1.7;
-        color: #333;
-        margin-bottom: 30px;
+        line-height: 1.6;
+        padding: 0 10px;
+        margin-bottom: 20px;
+        text-align: center;
     }
+  .about-image img {
+        width: 80% !important; /* Image ko bada kiya */
+        max-width: 300px;
+        margin-bottom: 20px; /* Text se gap */
+        order: -1; /* Image ko text se upar le aayega */
+}
 }
 
 /* =========================================
