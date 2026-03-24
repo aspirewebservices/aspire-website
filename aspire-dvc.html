@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aspire Web Services | Pro Digital Card</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-body: #F1F5F9;
+            --bg-card: #FFFFFF;
+            --teal: #10B981;
+            --blue-navy: #0F172A;
+            --text-main: #1E293B;
+            --text-sub: #64748B;
+            --border: #E2E8F0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
+        body { background: var(--bg-body); color: var(--text-main); display: flex; justify-content: center; }
+
+        .app-shell { width: 100%; max-width: 430px; background: var(--bg-card); min-height: 100vh; position: relative; padding-bottom: 110px; box-shadow: 0 0 50px rgba(0,0,0,0.05); }
+
+        /* --- HEADER --- */
+        .header { padding: 50px 25px 30px; text-align: center; border-bottom: 1px solid var(--border); }
+        .profile-wrap { width: 130px; height: 130px; margin: 0 auto 15px; background: #fff; border-radius: 35px; padding: 10px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); border: 1px solid #f0f0f0; position: relative; }
+        .profile-wrap img { width: 100%; height: 100%; border-radius: 25px; object-fit: contain; }
+        .v-badge { position: absolute; bottom: -5px; right: -5px; background: var(--teal); width: 32px; height: 32px; border-radius: 10px; display: flex; align-items: center; justify-content: center; border: 3px solid #fff; color: #fff; font-size: 12px; }
+        .name { font-size: 24px; font-weight: 800; color: var(--blue-navy); }
+        .tag { color: var(--teal); font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin-top: 5px; }
+
+        /* --- SECTIONS --- */
+        .section { padding: 25px 25px 10px; }
+        .sec-h { font-size: 11px; font-weight: 800; color: var(--text-sub); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        .sec-h::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+        /* --- INFO CARDS --- */
+        .info-card { display: flex; align-items: center; padding: 16px; background: #fff; border: 1px solid var(--border); border-radius: 20px; margin-bottom: 12px; text-decoration: none; transition: 0.3s; }
+        .info-card:active { background: #f8fafc; border-color: var(--teal); }
+        .info-icon { width: 45px; height: 45px; background: rgba(16, 185, 129, 0.08); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 18px; color: var(--teal); margin-right: 15px; }
+        .info-data span { display: block; font-size: 10px; font-weight: 700; color: var(--text-sub); text-transform: uppercase; }
+        .info-data b { display: block; font-size: 14px; color: var(--blue-navy); margin-top: 2px; }
+
+        /* --- SAVE CONTACT --- */
+        .action-wrap { padding: 10px 25px 20px; }
+        .save-btn { width: 100%; padding: 18px; background: var(--blue-navy); color: #fff; border-radius: 20px; text-align: center; font-weight: 800; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 10px; box-shadow: 0 10px 20px rgba(15, 23, 42, 0.1); }
+
+        /* --- SOCIAL & ADDRESS --- */
+        .social-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 15px; }
+        .social-btn { padding: 15px; background: #fff; border: 1px solid var(--border); border-radius: 18px; text-align: center; text-decoration: none; }
+        .social-btn i { font-size: 20px; color: var(--teal); margin-bottom: 5px; display: block; }
+        .social-btn span { font-size: 10px; font-weight: 700; color: var(--blue-navy); }
+
+        .address-box { padding: 20px; background: #F8FAFC; border: 1px dashed var(--border); border-radius: 22px; display: flex; gap: 12px; }
+        .address-box i { color: var(--teal); font-size: 20px; }
+        .address-box p { font-size: 13px; font-weight: 600; line-height: 1.5; }
+
+        /* --- ABOUT & SERVICES --- */
+        .card-box { padding: 20px; background: #F8FAFC; border: 1px solid var(--border); border-radius: 25px; font-size: 14px; color: var(--text-main); line-height: 1.6; }
+        .service-item { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; font-weight: 700; font-size: 13px; }
+        .service-item i { color: var(--teal); }
+
+        /* --- PAYMENT --- */
+        .pay-card { background: var(--blue-navy); color: #fff; padding: 25px; border-radius: 30px; text-align: center; }
+        .qr-box { width: 160px; height: 160px; background: #fff; margin: 0 auto 20px; border-radius: 15px; padding: 10px; border: 2px solid var(--teal); }
+        .qr-box img { width: 100%; height: 100%; object-fit: contain; }
+        .pay-row { display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 4px; }
+
+        /* --- GALLERY --- */
+        .gallery { display: flex; overflow-x: auto; gap: 15px; padding-bottom: 10px; scrollbar-width: none; }
+        .gallery::-webkit-scrollbar { display: none; }
+        .gallery-item { min-width: 280px; height: 160px; border-radius: 20px; overflow: hidden; border: 1px solid var(--border); }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* --- FORM --- */
+        .input-group { margin-bottom: 15px; }
+        .input-group input, .input-group textarea { width: 100%; padding: 16px; border-radius: 15px; border: 1px solid var(--border); background: #F8FAFC; outline: none; }
+        .wa-btn { width: 100%; padding: 18px; background: #25D366; color: #fff; border: none; border-radius: 20px; font-weight: 800; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; }
+
+        /* --- NAV --- */
+        .nav-dock { position: fixed; bottom: 25px; left: 50%; transform: translateX(-50%); width: 88%; background: rgba(255,255,255,0.96); backdrop-filter: blur(15px); border: 1px solid var(--border); border-radius: 28px; display: flex; justify-content: space-around; padding: 8px; box-shadow: 0 15px 30px rgba(0,0,0,0.08); z-index: 1000; }
+        .nav-link { color: var(--text-sub); text-decoration: none; padding: 12px; border-radius: 20px; flex: 1; text-align: center; }
+        .nav-link.active { background: var(--teal); color: #fff; }
+    </style>
+</head>
+<body>
+
+<div class="app-shell">
+    <header class="header" id="home">
+        <div class="profile-wrap"><img src="images/Logo.png" alt="Logo"><div class="v-badge"><i class="fas fa-check"></i></div></div>
+        <h1 class="name">Aspire Web Services</h1>
+        <p class="tag">Excellence in Code</p>
+    </header>
+
+    <section class="section">
+        <span class="sec-h">Quick Contact</span>
+        <a href="tel:+919707843381" class="info-card">
+            <div class="info-icon"><i class="fas fa-phone"></i></div>
+            <div class="info-data"><span>Call Us</span><b>+91 9707843381</b></div>
+        </a>
+        <a href="https://wa.me/919707843381" class="info-card">
+            <div class="info-icon"><i class="fab fa-whatsapp"></i></div>
+            <div class="info-data"><span>WhatsApp</span><b>+91 9707843381</b></div>
+        </a>
+        <a href="mailto:info@aspire.in" class="info-card">
+            <div class="info-icon"><i class="fas fa-envelope"></i></div>
+            <div class="info-data"><span>Email</span><b>info@aspire.in</b></div>
+        </a>
+        <a href="https://www.aspire.in" class="info-card">
+            <div class="info-icon"><i class="fas fa-globe"></i></div>
+            <div class="info-data"><span>Website</span><b>www.aspire.in</b></div>
+        </a>
+    </section>
+
+    <div class="action-wrap">
+        <a href="#" class="save-btn vcard-download"><i class="fas fa-user-plus"></i> Save to Contacts</a>
+    </div>
+
+    <section class="section" id="links">
+        <span class="sec-h">Connect & Locate</span>
+        <div class="social-grid">
+            <a href="#" class="social-btn"><i class="fab fa-facebook"></i><span>Facebook</span></a>
+            <a href="#" class="social-btn"><i class="fab fa-instagram"></i><span>Instagram</span></a>
+            <a href="#" class="social-btn"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a>
+        </div>
+        <div class="address-box">
+            <i class="fas fa-location-dot"></i>
+            <p>Mateshwari Altura, <br>Thane, Maharashtra - 400607</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <span class="sec-h">About Aspire</span>
+        <div class="card-box">
+            Specializing in custom Web Development, Aspire ERP solutions, and SEO strategies to scale your business digitally.
+        </div>
+    </section>
+
+    <section class="section">
+        <span class="sec-h">Our Expertise</span>
+        <div class="card-box">
+            <div class="service-item"><i class="fas fa-rocket"></i> Aspire ERP Solutions</div>
+            <div class="service-item"><i class="fas fa-laptop-code"></i> Premium Web Design</div>
+            <div class="service-item"><i class="fas fa-search-dollar"></i> SEO & Marketing</div>
+            <div class="service-item"><i class="fas fa-server"></i> Cloud Hosting</div>
+        </div>
+    </section>
+
+    <section class="section">
+        <span class="sec-h">Secure Payment</span>
+        <div class="pay-card">
+            <div class="qr-box">
+                <img src="images/payqr.jpeg" alt="Payment QR">
+            </div>
+            <div class="pay-row">Bank: <b>Canara Bank</b></div>
+            <div class="pay-row">A/C: <b>4680201000101</b></div>
+            <div class="pay-row">IFSC: <b>CNRB0004680</b></div>
+            <div class="pay-row">UPI: <b>9707843381@paytm</b></div>
+        </div>
+    </section>
+
+    <section class="section">
+        <span class="sec-h">Work Showcase</span>
+        <div class="gallery">
+            <div class="gallery-item"><img src="images/erp-mockup.png" alt="Aspire ERP"></div>
+            <div class="gallery-item"><img src="images/logodesigns.png" alt="Logo Portfolio"></div>
+        </div>
+    </section>
+
+    <section class="section" id="contact" style="margin-bottom: 50px;">
+        <span class="sec-h">Send WhatsApp Enquiry</span>
+        <div class="input-group"><input type="text" id="wa-name" placeholder="Full Name"></div>
+        <div class="input-group"><input type="tel" id="wa-phone" placeholder="Mobile Number"></div>
+        <div class="input-group"><textarea id="wa-msg" rows="3" placeholder="Tell us your requirement..."></textarea></div>
+        <button class="wa-btn" onclick="sendToWhatsApp()">
+            <i class="fab fa-whatsapp"></i> START CHAT
+        </button>
+    </section>
+
+    <nav class="nav-dock">
+        <a href="#home" class="nav-link active"><i class="fas fa-home"></i></a>
+        <a href="#links" class="nav-link"><i class="fas fa-link"></i></a>
+        <a href="#contact" class="nav-link"><i class="fas fa-paper-plane"></i></a>
+    </nav>
+</div>
+
+<script>
+    function sendToWhatsApp() {
+        const name = document.getElementById('wa-name').value;
+        const phone = document.getElementById('wa-phone').value;
+        const msg = document.getElementById('wa-msg').value;
+        const number = "919707843381";
+        const text = `*New Enquiry*%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Message:* ${msg}`;
+        window.open(`https://wa.me/${number}?text=${text}`, '_blank');
+    }
+
+    document.querySelector('.vcard-download').addEventListener('click', function(e) {
+        e.preventDefault();
+        var vcard = "BEGIN:VCARD\nVERSION:3.0\nFN:Aspire Web Services\nTEL:+919707843381\nADR:;;Mateshwari Altura;Thane;Maharashtra;400607;India\nEND:VCARD";
+        var blob = new Blob([vcard], { type: "text/vcard" });
+        var url = window.URL.createObjectURL(blob);
+        var a = document.createElement("a");
+        a.href = url; a.download = "Aspire_Contact.vcf";
+        document.body.appendChild(a); a.click();
+    });
+</script>
+
+</body>
+</html>
