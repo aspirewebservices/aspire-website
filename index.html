@@ -3,339 +3,405 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Aspire Web Services | Web Design & School Management Software Thane</title>
-<meta name="title" content="Aspire Web Services | Web Design & School Management Software Thane">
-<meta name="description" content="Professional Web Design, Branding, and Aspire ERP - the best School Management Software in Thane. High-performance digital solutions for your business growth.">
+  <title>Aspire Web Services | Web Design & School Management Software Thane</title>
+  <meta name="description" content="Professional Web Design, Branding, and Aspire ERP - School Management Software in Thane and Mumbai. High-performance digital solutions for your business growth." />
 
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://www.aspirewebservices.com/">
-<meta property="og:title" content="Aspire Web Services | Innovating Digital Presence">
-<meta property="og:description" content="Custom Web Solutions and Powerful School ERP (Aspire ERP). Get your free demo today!">
-<meta property="og:image" content="https://www.aspirewebservices.in/images/Logo.jpg">
-<link rel="icon" type="image/png" href="https://www.aspirewebservices.in/images/favicon/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="https://www.aspirewebservices.in/images/favicon/favicon.svg" />
-<link rel="shortcut icon" href="https://www.aspirewebservices.in/images/favicon/favicon" />
-<link rel="apple-touch-icon" sizes="180x180" href="https://www.aspirewebservices.in/images/favicon/apple-touch-icon.png" />
-<meta name="apple-mobile-web-app-title" content="Aspire Web Services" />
-<link rel="manifest" href="https://www.aspirewebservices.in/images/favicon/site.webmanifest" />
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.aspirewebservices.in/" />
+  <meta property="og:title" content="Aspire Web Services | Innovating Digital Presence" />
+  <meta property="og:description" content="Custom Web Solutions and Powerful School ERP (Aspire ERP). Get your free demo today!" />
+  <meta property="og:image" content="https://www.aspirewebservices.in/images/Logo.jpg" />
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-  <script src="js/main.js" defer></script>
-  <!-- Swiper CSS -->
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" href="https://www.aspirewebservices.in/images/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="https://www.aspirewebservices.in/images/favicon/favicon.svg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://www.aspirewebservices.in/images/favicon/apple-touch-icon.png" />
+  <link rel="manifest" href="https://www.aspirewebservices.in/images/favicon/site.webmanifest" />
+
+  <!-- Local Business Schema (SEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Aspire Web Services",
+    "image": "https://www.aspirewebservices.in/images/Logo.jpg",
+    "telephone": "+919707843381",
+    "email": "info@aspirewebservices.in",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Shivnath Habitat, Padle Gaon",
+      "addressLocality": "Thane",
+      "postalCode": "421204",
+      "addressCountry": "IN"
+    },
+    "url": "https://www.aspirewebservices.in/",
+    "priceRange": "₹₹",
+    "openingHours": "Mo-Sa 09:00-19:00"
+  }
+  </script>
+
+  <!-- Google Fonts & Swiper CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+  <!-- Custom Styles & Scripts -->
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
+  <script src="js/main.js" defer></script>
 </head>
 <body>
 
-  <!-- Header / Hero Section -->
-  <section class="hero">
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">Aspire Web Services</a>
+      <nav class="nav-menu" id="navMenu">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#aspire-erp" class="nav-link">Aspire ERP</a>
+        <a href="#portfolio" class="nav-link">Portfolio</a>
+        <a href="#reviews" class="nav-link">Reviews</a>
+        <a href="#contact" class="btn btn-sm">Contact Us</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
     <div class="container">
-      <div class="hero-buttons-container">
       <div class="hero-content">
         <span class="hero-badge">Innovating Your Digital Presence</span>
         <h1>Welcome to <span class="highlight">Aspire Web Services</span></h1>
-        <p>We create modern websites, stunning designs, and powerful digital solutions for your business growth.</p>
+        <p>We create modern websites, stunning designs, and powerful digital solutions tailored for your business growth.</p>
         
         <div class="hero-buttons">
-        <a href="#about" class="btn">About Us</a>
-        <a href="#services" class="btn btn-outline">Our Services</a>
-        <a href="#aspire-erp" class="btn">Aspire ERP</a>
-        <a href="#portfolio" class="btn btn-outline">View Portfolio</a>
-        <a href="#reviews" class="btn">Reviews</a>
-        <a href="#contact" class="btn btn-outline">Contact Us</a>
+          <a href="#services" class="btn">Our Services</a>
+          <a href="#contact" class="btn btn-outline">Let's Talk</a>
         </div>
       </div>
     </div>
   </section>
-  
 
-<!-- About Section -->
-<section class="about" id="about">
-  <div class="container about-container">
-    <div class="about-text">
-    <h2 class="aboutsection-title">About Us</h2>
-      <p>At Aspire Web Services, we are passionate about crafting beautiful, high-performing websites that help businesses grow. With a focus on creativity, innovation, and user-centered design, we offer solutions that are not only visually appealing but also functional and scalable.</p>
-      <p>From startups to established brands, we work with everyone to bring their digital visions to life. Your success is our mission.</p>
-      <a href="#contact" class="btn">Let's Work Together</a>
-    </div>
-    <div class="about-image">
-      <img src="images/about.svg" alt="About Aspire Web Services">
-    </div>
-  </div>
-</section>
-<!-- Services Section -->
-<section class="services" id="services">
-  <div class="container">
-    <h2 class="section-title">Our Services</h2>
-    <div class="services-grid">
-
-      <div class="service-card">
-        <img src="images/website.svg" alt="Web Development In Mumbai">
-        <h3>Website Development</h3>
-        <p>Responsive, SEO-friendly, and high-performing websites crafted for your business success.</p>
+  <!-- Trust / Stats Bar -->
+  <section class="trust-bar">
+    <div class="trust-container">
+      <div class="trust-stat">
+        <h4>50+</h4>
+        <p>Projects Delivered</p>
       </div>
-
-      <div class="service-card">
-        <img src="images/branding.svg" alt="Branding & Logo Design In Mumbai">
-        <h3>Branding & Logo Design</h3>
-        <p>Build a powerful brand identity with creative logo and branding solutions tailored to you.</p>
+      <div class="trust-stat">
+        <h4>99.9%</h4>
+        <p>Uptime & Support</p>
       </div>
-
-      <div class="service-card">
-        <img src="images/sm-media.svg" alt="Social Media Management In Mumbai">
-        <h3>Social Media Management</h3>
-        <p>Grow your online presence with engaging posts, strategic planning, and audience interaction.</p>
-      </div>
-
-      <div class="service-card">
-        <img src="images/web-maintain.svg" alt="Website Maintenance In Mumbai">
-        <h3>Website Maintenance</h3>
-        <p>Keep your website updated, secure, and running smoothly with our ongoing support services.</p>
-      </div>
-
-      <div class="service-card">
-        <img src="images/hosting.svg" alt="Hosting & Domain Assistance In Mumbai">
-        <h3>Hosting & Domain Assistance</h3>
-        <p>Secure hosting and domain services to keep your website online, fast, and protected.</p>
-      </div>      
-
-      <div class="service-card">
-        <img src="images/ui-ux.svg" alt="UI/UX Design In Mumbai">
-        <h3>UI/UX Designing</h3>
-        <p>Creating modern, intuitive interfaces that enhance user engagement and drive better conversions.</p>
-      </div>
-      
-      <div class="service-card">
-        <img src="images/marketing.svg" alt="Digital Marketing In Mumbai">
-        <h3>Digital Marketing</h3>
-        <p>Comprehensive strategies to boost your brand visibility and generate more leads online.</p>
-      </div>
-
-      <div class="service-card">
-        <img src="images/email.svg" alt="Business Email Setup In Mumbai">
-        <h3>Business Email Setup</h3>
-        <p>Professional email addresses setup with your domain to enhance your brand’s credibility.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<section class="featured-product" id="aspire-erp">
-  <div class="container featured-container">
-    <div class="featured-image">
-      <img src="images/erp-mockup.png" alt="Aspire ERP School Management Software">
-    </div>
-    <div class="featured-content">
-      <span class="badge">Featured Product</span>
-      <h2>Aspire <span class="highlight-teal">ERP</span></h2>
-      <h3>Advanced School Management Solution</h3>
-<p>Streamline your educational institution with our comprehensive ERP. From automated fee tracking to digital notices—manage everything in one powerful platform.</p>
-
-<ul class="feature-list">
-  <li>✔ Parent Portal </li>
-  <li>✔ Staff & Student Attendance</li>
-  <li>✔ Smart Fee Management</li>
-  <li>✔ Timetable Generator</li>
-  <li>✔ Digital Notice Board</li>
-  <li>✔ Admission Inquiries Tracking</li>
-</ul>
-
-      <div class="featured-buttons">
-        <a href="https://wa.me/919707843381" class="btn">Get Free Demo</a>
-        <a href="aspire-erp.html" class="btn btn-outline">Learn More</a>
+      <div class="trust-stat">
+        <h4>100%</h4>
+        <p>Client Satisfaction</p>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="portfolio" class="portfolio-section" style="background: linear-gradient(120deg, #ffffff, #f0f9f8)">
-  <div class="container">
-    <h2 class="section-title">Our Portfolio</h2>
-    <div class="portfolio-grid">
-      
-      <div class="portfolio-item" onclick="openLightbox('images/logodesigns.png')">
-        <div class="portfolio-img-box">
-          <img src="images/logodesigns.png" alt="Logo Designing">
-        </div>
-        <div class="portfolio-caption">
-          <h3>Logo Designing</h3>
-          <span class="view-project">Click to Zoom +</span>
-        </div>
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="container about-container">
+      <div class="about-text">
+        <h2 class="section-title">About Us</h2>
+        <p>At Aspire Web Services, we craft beautiful, high-performing websites that help businesses grow. With a focus on creativity, innovation, and user-centered design, we offer solutions that are functional, fast, and scalable.</p>
+        <p>From local startups to established brands across Mumbai, Thane, and beyond, we bring your digital vision to life.</p>
+        <a href="#contact" class="btn">Let's Work Together</a>
       </div>
-
-      <div class="portfolio-item" onclick="openLightbox('images/socialmediaposts.png')">
-        <div class="portfolio-img-box">
-          <img src="images/socialmediaposts.png" alt="Social Media Posts">
-        </div>
-        <div class="portfolio-caption">
-          <h3>Social Media Posts</h3>
-          <span class="view-project">Click to Zoom +</span>
-        </div>
+      <div class="about-image">
+        <img src="images/about.svg" alt="About Aspire Web Services team" loading="lazy" />
       </div>
-
-      <div class="portfolio-item" onclick="openLightbox('images/visitingcards.png')">
-        <div class="portfolio-img-box">
-          <img src="images/visitingcards.png" alt="Visiting Cards Design">
-        </div>
-        <div class="portfolio-caption">
-          <h3>Visiting Cards Design</h3>
-          <span class="view-project">Click to Zoom +</span>
-        </div>
-      </div>
-      
-      <div class="portfolio-item" onclick="openLightbox('images/project1.png')">
-        <div class="portfolio-img-box">
-          <img src="images/project1.png" alt="Website Designing">
-        </div>
-        <div class="portfolio-caption">
-          <h3>Website Designing</h3>
-          <span class="view-project">Click to Zoom +</span>
-        </div>
-      </div>
-
     </div>
-  </div>
-</section>
+  </section>
 
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-<section class="reviews" id="reviews">
-  <div class="container">
-    <h2 class="section-title">Client Reviews</h2>
-    
-    <div class="swiper reviews-slider">
-      <div class="swiper-wrapper">
+  <!-- Services Section -->
+  <section class="services" id="services">
+    <div class="container">
+      <h2 class="section-title">Our Services</h2>
+      <div class="services-grid">
+
+        <div class="service-card">
+          <img src="images/website.svg" alt="Website Development" loading="lazy" />
+          <h3>Website Development</h3>
+          <p>Responsive, SEO-friendly, and high-performing websites crafted for business success.</p>
+        </div>
+
+        <div class="service-card">
+          <img src="images/branding.svg" alt="Branding & Logo Design" loading="lazy" />
+          <h3>Branding & Logo Design</h3>
+          <p>Build a lasting brand identity with creative logo, color scheme, and typography systems.</p>
+        </div>
+
+        <div class="service-card">
+          <img src="images/sm-media.svg" alt="Social Media Management" loading="lazy" />
+          <h3>Social Media Management</h3>
+          <p>Grow your online presence with targeted posting, organic strategy, and customer interaction.</p>
+        </div>
+
+        <div class="service-card">
+          <img src="images/web-maintain.svg" alt="Website Maintenance" loading="lazy" />
+          <h3>Website Maintenance</h3>
+          <p>Keep your website secure, updated, and error-free with proactive technical support.</p>
+        </div>
+
+        <div class="service-card">
+          <img src="images/hosting.svg" alt="Hosting & Domain Assistance" loading="lazy" />
+          <h3>Hosting & Domains</h3>
+          <p>Reliable SSL, high-speed hosting, and domain configuration to keep your business online.</p>
+        </div>      
+
+        <div class="service-card">
+          <img src="images/ui-ux.svg" alt="UI/UX Designing" loading="lazy" />
+          <h3>UI/UX Designing</h3>
+          <p>Modern, intuitive interfaces crafted to engage visitors and maximize conversion rates.</p>
+        </div>
         
-        <div class="swiper-slide">
-          <div class="review-card">
-            <div class="stars">★★★★★</div>
-            <p>"Excellent service by Aspire Web Services. Very professional, responsive, and delivered our website exactly as expected. Highly recommended!"</p>
-            <div class="client-info">
-              <h4>Rishabh Doshi</h4>
-              <span>Owner, Doshi Enterprises - Kolkata</span>
-            </div>
+        <div class="service-card">
+          <img src="images/marketing.svg" alt="Digital Marketing" loading="lazy" />
+          <h3>Digital Marketing</h3>
+          <p>Targeted ad campaigns and local SEO strategies designed to drive actionable leads.</p>
+        </div>
+
+        <div class="service-card">
+          <img src="images/email.svg" alt="Business Email Setup" loading="lazy" />
+          <h3>Business Email Setup</h3>
+          <p>Branded Google Workspace and business email setups that elevate your company's credibility.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Product (Aspire ERP) -->
+  <section class="featured-product" id="aspire-erp">
+    <div class="container featured-container">
+      <div class="featured-image">
+        <img src="images/erp-mockup.png" alt="Aspire ERP School Management Software Interface" loading="lazy" />
+      </div>
+      <div class="featured-content">
+        <span class="badge">Featured Product</span>
+        <h2>Aspire <span class="highlight-teal">ERP</span></h2>
+        <h3>Advanced School Management Solution</h3>
+        <p>Streamline your educational institution with our comprehensive ERP. From automated fee tracking to real-time student updates—manage operations effortlessly.</p>
+
+        <ul class="feature-list">
+          <li>Parent Portal</li>
+          <li>Staff & Student Attendance</li>
+          <li>Smart Fee Management</li>
+          <li>Timetable Generator</li>
+          <li>Digital Notice Board</li>
+          <li>Admission Inquiries Tracking</li>
+        </ul>
+
+        <div class="featured-buttons">
+          <a href="https://wa.me/919707843381?text=Hi,%20I'd%20like%20to%20schedule%20a%20free%20demo%20for%20Aspire%20ERP%20School%20Software." class="btn" target="_blank" rel="noopener noreferrer">Get Free Demo</a>
+          <a href="aspire-erp.html" class="btn btn-outline">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="portfolio-section">
+    <div class="container">
+      <h2 class="section-title">Our Portfolio</h2>
+      <div class="portfolio-grid">
+        
+        <div class="portfolio-item" data-image="images/logodesigns.png" tabindex="0" role="button" aria-label="View Logo Designing preview">
+          <div class="portfolio-img-box">
+            <img src="images/logodesigns.png" alt="Logo Designing Collection" loading="lazy" />
+          </div>
+          <div class="portfolio-caption">
+            <h3>Logo Designing</h3>
+            <span class="view-project">Click to Zoom +</span>
           </div>
         </div>
 
-        <div class="swiper-slide">
-          <div class="review-card">
-            <div class="stars">★★★★★</div>
-            <p>"Very good service and a great team. Always ready to help and come up with creative ideas."</p>
-            <div class="client-info">
-              <h4>Milan Shah</h4>
-              <span>Owner, MP CCTV - London,UK</span>
-            </div>
+        <div class="portfolio-item" data-image="images/socialmediaposts.png" tabindex="0" role="button" aria-label="View Social Media Posts preview">
+          <div class="portfolio-img-box">
+            <img src="images/socialmediaposts.png" alt="Social Media Graphics" loading="lazy" />
+          </div>
+          <div class="portfolio-caption">
+            <h3>Social Media Posts</h3>
+            <span class="view-project">Click to Zoom +</span>
           </div>
         </div>
 
-        <div class="swiper-slide">
-          <div class="review-card">
-            <div class="stars">★★★★★</div>
-            <p>"Professional work done. Very responsive team delivering great quality with true professionalism and value for money."</p>
-            <div class="client-info">
-              <h4>Umang Furia</h4>
-              <span>Owner, Ronak Moulding House - Mumbai</span>
-            </div>
+        <div class="portfolio-item" data-image="images/visitingcards.png" tabindex="0" role="button" aria-label="View Visiting Cards Design preview">
+          <div class="portfolio-img-box">
+            <img src="images/visitingcards.png" alt="Visiting Card Layouts" loading="lazy" />
+          </div>
+          <div class="portfolio-caption">
+            <h3>Visiting Cards Design</h3>
+            <span class="view-project">Click to Zoom +</span>
           </div>
         </div>
-         <div class="swiper-slide">
-          <div class="review-card">
-            <div class="stars">★★★★★</div>
-            <p>"Aspire Web Services provides great digital ads and marketing services at an affordable price. They work quickly and I highly recommend them."</p>
-            <div class="client-info">
-              <h4>Dr. Gaurav Shetty</h4>
-              <span>Smile N Style Dental Clinic - Mumbai</span>
-            </div>
+        
+        <div class="portfolio-item" data-image="images/project1.png" tabindex="0" role="button" aria-label="View Website Designing preview">
+          <div class="portfolio-img-box">
+            <img src="images/project1.png" alt="Website Design Project" loading="lazy" />
           </div>
-        </div>
-
-        <div class="swiper-slide">
-          <div class="review-card">
-            <div class="stars">★★★★★</div>
-            <p>"Satisfied with the work. Got great results and a smooth experience overall."</p>
-            <div class="client-info">
-              <h4>Dr. Binal Shah</h4>
-              <span>Dentist - Mumbai</span>
-            </div>
+          <div class="portfolio-caption">
+            <h3>Website Designing</h3>
+            <span class="view-project">Click to Zoom +</span>
           </div>
         </div>
 
       </div>
-      <div class="swiper-pagination"></div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Contact Section -->
-<section class="contact" id="contact">
-  <div class="container">
-    <h2 class="section-title">Contact Us</h2>
-    <form class="contact-form" action="https://formspree.io/f/meogonjy" method="POST">
+  <!-- Client Reviews Slider -->
+  <section class="reviews" id="reviews">
+    <div class="container">
+      <h2 class="section-title">Client Reviews</h2>
       
-      <div class="form-group">
-        <input type="text" name="name" placeholder="Your Name" required>
-      </div>
+      <div class="swiper reviews-slider">
+        <div class="swiper-wrapper">
+          
+          <div class="swiper-slide">
+            <div class="review-card">
+              <div class="stars" aria-label="5 stars">★★★★★</div>
+              <p>"Excellent service by Aspire Web Services. Very professional, responsive, and delivered our website exactly as expected. Highly recommended!"</p>
+              <div class="client-info">
+                <h4>Rishabh Doshi</h4>
+                <span>Owner, Doshi Enterprises - Kolkata</span>
+              </div>
+            </div>
+          </div>
 
-      <div class="form-group">
-        <input type="email" name="email" placeholder="Your Email" required>
-      </div>
+          <div class="swiper-slide">
+            <div class="review-card">
+              <div class="stars" aria-label="5 stars">★★★★★</div>
+              <p>"Very good service and a great team. Always ready to help and come up with creative ideas."</p>
+              <div class="client-info">
+                <h4>Milan Shah</h4>
+                <span>Owner, MP CCTV - London, UK</span>
+              </div>
+            </div>
+          </div>
 
-      <div class="form-group">
-        <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
-      </div>
+          <div class="swiper-slide">
+            <div class="review-card">
+              <div class="stars" aria-label="5 stars">★★★★★</div>
+              <p>"Professional work done. Very responsive team delivering great quality with true professionalism and value for money."</p>
+              <div class="client-info">
+                <h4>Umang Furia</h4>
+                <span>Owner, Ronak Moulding House - Mumbai</span>
+              </div>
+            </div>
+          </div>
 
-      <button type="submit" class="btn">Send Message</button>
-    </form>
-  </div>
-</section>
-<!-- WhatsApp Floating Button -->
-<a href="https://wa.me/919707843381" class="whatsapp-float" target="_blank" title="Chat with us on WhatsApp">
-  <img src="images/whatsapp.svg" alt="WhatsApp" />
-</a>
+          <div class="swiper-slide">
+            <div class="review-card">
+              <div class="stars" aria-label="5 stars">★★★★★</div>
+              <p>"Aspire Web Services provides great digital ads and marketing services at an affordable price. They work quickly and I highly recommend them."</p>
+              <div class="client-info">
+                <h4>Dr. Gaurav Shetty</h4>
+                <span>Smile N Style Dental Clinic - Mumbai</span>
+              </div>
+            </div>
+          </div>
 
+          <div class="swiper-slide">
+            <div class="review-card">
+              <div class="stars" aria-label="5 stars">★★★★★</div>
+              <p>"Satisfied with the work. Got great results and a smooth experience overall."</p>
+              <div class="client-info">
+                <h4>Dr. Binal Shah</h4>
+                <span>Dentist - Mumbai</span>
+              </div>
+            </div>
+          </div>
 
-<!-- Scroll to Top Button -->
-<button id="scrollToTopBtn" title="Go to top">↑</button>
-
-<!-- Footer Section -->
-<footer class="footer">
-  <div class="container footer-container">
-    <div class="footer-brand">
-      <h3>Aspire Web Services</h3>
-      <p>Empowering businesses with cutting-edge digital solutions and creative excellence.</p>
-      <div class="footer-contact-info">
-        <p>Email: info@aspirewebservices.in</p>
-        <p>Phone: +91 9707843381</p>
-        <p>Address: Shivnath Habitat, Padle Gaon, Thane -421204
-
+        </div>
+        <div class="swiper-pagination"></div>
       </div>
     </div>
+  </section>
 
-    <div class="footer-social-box">
-      <h4>Follow Our Journey</h4>
-      <div class="social-links">
-        <a href="https://www.instagram.com/aspirewebservices/" target="_blank">
-          <img src="images/insta.svg" alt="Instagram">
-        </a>
-        <a href="https://www.facebook.com/aspirewebstudio/" target="_blank">
-          <img src="images/facebook.svg" alt="Facebook">
-        </a>
-        <a href="https://in.linkedin.com/company/aspire-web-studio" target="_blank">
-          <img src="images/linkedin.svg" alt="LinkedIn">
-        </a>
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <h2 class="section-title">Contact Us</h2>
+      <form class="contact-form" action="https://formspree.io/f/meogonjy" method="POST">
+        
+        <div class="form-group">
+          <label for="name" class="sr-only">Your Name</label>
+          <input type="text" id="name" name="name" placeholder="Your Name" required autocomplete="name" />
+        </div>
+
+        <div class="form-group">
+          <label for="email" class="sr-only">Your Email</label>
+          <input type="email" id="email" name="email" placeholder="Your Email" required autocomplete="email" />
+        </div>
+
+        <div class="form-group">
+          <label for="message" class="sr-only">Your Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+        </div>
+
+        <button type="submit" class="btn">Send Message</button>
+        <div id="form-status" class="form-status" role="alert"></div>
+      </form>
+    </div>
+  </section>
+
+  <!-- WhatsApp Floating Button (Pre-filled prompt) -->
+  <a href="https://wa.me/919707843381?text=Hi%20Aspire%20Web%20Services,%20I'm%20interested%20in%20building%20a%20website%20or%20software%20solution." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp" title="Chat on WhatsApp">
+    <img src="images/whatsapp.svg" alt="WhatsApp Icon" />
+  </a>
+
+  <!-- Scroll to Top Button -->
+  <button id="scrollToTopBtn" aria-label="Scroll to top of the page" title="Go to top">↑</button>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <h3>Aspire Web Services</h3>
+        <p>Empowering businesses with cutting-edge digital solutions, responsive web design, and school ERP software.</p>
+        <div class="footer-contact-info">
+          <p>Email: <a href="mailto:info@aspirewebservices.in">info@aspirewebservices.in</a></p>
+          <p>Phone: <a href="tel:+919707843381">+91 9707843381</a></p>
+          <p>Address: Shivnath Habitat, Padle Gaon, Thane - 421204</p>
+        </div>
+      </div>
+
+      <div class="footer-social-box">
+        <h4>Follow Our Journey</h4>
+        <div class="social-links">
+          <a href="https://www.instagram.com/aspirewebservices/" target="_blank" rel="noopener noreferrer" aria-label="Visit our Instagram page">
+            <img src="images/insta.svg" alt="Instagram" />
+          </a>
+          <a href="https://www.facebook.com/aspirewebstudio/" target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook page">
+            <img src="images/facebook.svg" alt="Facebook" />
+          </a>
+          <a href="https://in.linkedin.com/company/aspire-web-studio" target="_blank" rel="noopener noreferrer" aria-label="Visit our LinkedIn profile">
+            <img src="images/linkedin.svg" alt="LinkedIn" />
+          </a>
+        </div>
       </div>
     </div>
+    <div class="footer-bottom">
+      <p>© 2026 Aspire Web Services. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Portfolio Lightbox Overlay -->
+  <div id="portfolio-lightbox" role="dialog" aria-modal="true" aria-label="Image Preview">
+    <button class="close-btn" aria-label="Close preview">&times;</button>
+    <img id="lightbox-img" src="" alt="Portfolio preview expanded view" />
   </div>
-  <div class="footer-bottom">
-    <p>© 2026 Aspire Web Services. All rights reserved.</p>
-  </div>
-</footer>
-<div id="portfolio-lightbox" onclick="closeLightbox()">
-    <span class="close-btn">&times;</span>
-    <img id="lightbox-img" src="" alt="Full View">
-</div>
 
 </body>
 </html>
-
-
