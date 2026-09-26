@@ -6,12 +6,13 @@
   <title>Shukrana Electricals - Arun Garg</title>
   <meta name="description" content="Connect with Shukrana Electricals in Nihal Singh Wala. Your trusted shop for CCTV, smart TVs, geysers, water purifiers & full electrical fittings.">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <style>
+<style>
     :root {
-      --primary: #0084c8;
-      --primary-dark: #006da8;
-      --accent: #e53935;
-      --bg: #eef2f6;
+      --primary: #d90429;        /* Card Red */
+      --primary-dark: #b8001f;
+      --secondary: #ffbe0b;      /* Card Yellow */
+      --secondary-hover: #e0a500;
+      --bg: #f8f9fa;
       --card-bg: #ffffff;
       --text-main: #1f2937;
       --text-muted: #64748b;
@@ -23,7 +24,7 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans Gurmukhi', Helvetica, Arial, sans-serif;
     }
 
     body {
@@ -41,14 +42,14 @@
       background: var(--card-bg);
       border-radius: var(--card-radius);
       overflow: hidden;
-      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 12px 35px rgba(217, 4, 41, 0.12);
       position: relative;
     }
 
-    /* Banner / Hero */
+    /* Red Hero / Banner */
     .banner {
-      background: linear-gradient(135deg, #0077b6 0%, var(--primary) 60%, #0096c7 100%);
-      padding: 36px 20px 48px;
+      background: linear-gradient(145deg, #d90429 0%, #ef233c 70%, #d90429 100%);
+      padding: 34px 18px 46px;
       text-align: center;
       color: #fff;
       position: relative;
@@ -61,20 +62,20 @@
       left: 0;
       right: 0;
       height: 6px;
-      background: var(--accent);
+      background: var(--secondary);
     }
 
     .logo-container {
-      width: 106px;
-      height: 106px;
+      width: 96px;
+      height: 96px;
       margin: 0 auto 12px;
       background: #ffffff;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
-      border: 4px solid #ffffff;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
+      border: 3.5px solid var(--secondary);
       overflow: hidden;
     }
 
@@ -85,31 +86,54 @@
     }
 
     .logo-fallback {
-      font-size: 30px;
+      font-size: 28px;
       font-weight: 800;
       color: var(--primary);
-      letter-spacing: -1px;
     }
 
-    .company-title {
-      font-size: 23px;
+    .punjabi-title {
+      font-size: 26px;
       font-weight: 800;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
+      color: var(--secondary);
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+      line-height: 1.25;
       margin-bottom: 2px;
     }
 
-    .person-name {
+    .english-title {
       font-size: 15px;
-      font-weight: 600;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #ffffff;
       opacity: 0.95;
+    }
+
+    .person-names {
+      margin-top: 8px;
+      background: rgba(0, 0, 0, 0.16);
+      display: inline-block;
+      padding: 5px 14px;
+      border-radius: 20px;
+    }
+
+    .person-name-pb {
+      font-size: 14px;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .person-name-en {
+      font-size: 12px;
+      color: #fee2e2;
+      font-weight: 500;
     }
 
     .content {
       padding: 20px;
     }
 
-    /* Primary Action Buttons */
+    /* Action Buttons */
     .action-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -129,7 +153,7 @@
       border: none;
       cursor: pointer;
       text-decoration: none;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      transition: transform 0.15s ease;
     }
 
     .action-btn-main:active {
@@ -139,18 +163,18 @@
     .btn-save {
       background: var(--primary);
       color: #fff;
-      box-shadow: 0 4px 12px rgba(0, 132, 200, 0.28);
+      box-shadow: 0 4px 12px rgba(217, 4, 41, 0.3);
     }
 
     .btn-share {
-      background: #f1f5f9;
-      color: #1e293b;
+      background: #fff;
+      color: var(--text-main);
       border: 1px solid var(--border);
     }
 
     .section-title {
-      font-size: 13px;
-      font-weight: 700;
+      font-size: 12px;
+      font-weight: 800;
       text-transform: uppercase;
       color: var(--text-muted);
       letter-spacing: 0.8px;
@@ -167,7 +191,7 @@
       background: var(--border);
     }
 
-    /* Detailed Contact List */
+    /* Contact Details List */
     .contact-list {
       display: flex;
       flex-direction: column;
@@ -185,12 +209,6 @@
       border-radius: 12px;
       text-decoration: none;
       color: inherit;
-      transition: background 0.15s ease, border-color 0.15s ease;
-    }
-
-    .contact-item:hover {
-      background: #f8fafc;
-      border-color: #cbd5e1;
     }
 
     .contact-left {
@@ -211,18 +229,18 @@
       flex-shrink: 0;
     }
 
-    .icon-call { background: #eff6ff; color: #2563eb; }
-    .icon-wa { background: #f0fdf4; color: #16a34a; }
-    .icon-mail { background: #fef2f2; color: var(--accent); }
-    .icon-map { background: #fffbeb; color: #d97706; }
+    .icon-call { background: #eaffde; color: green; }
+    .icon-wa { background: #d5ffe1; color: #16a34a; }
+    .icon-mail { background: #fef3c7; color: #d97706; }
+    .icon-map { background: #eff6ff; color: #2563eb; }
 
     .contact-details {
       min-width: 0;
     }
 
     .contact-label {
-      font-size: 11px;
-      font-weight: 600;
+      font-size: 10px;
+      font-weight: 700;
       color: var(--text-muted);
       text-transform: uppercase;
       letter-spacing: 0.5px;
@@ -246,7 +264,7 @@
 
     /* About Section */
     .about-box {
-      background: #f8fafc;
+      background: #fff8f8;
       border-left: 4px solid var(--primary);
       padding: 12px 14px;
       border-radius: 0 8px 8px 0;
@@ -256,7 +274,101 @@
       line-height: 1.5;
     }
 
-    /* Services Grid */
+    .about-box-pb {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--primary-dark);
+      margin-bottom: 6px;
+      line-height: 1.4;
+    }
+
+    /* Featured Products Slider */
+    .product-slider-container {
+      margin-bottom: 24px;
+    }
+
+    .product-slider {
+      display: flex;
+      gap: 12px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding: 4px 2px 12px;
+    }
+
+    .product-slider::-webkit-scrollbar {
+      height: 5px;
+    }
+
+    .product-slider::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 10px;
+    }
+
+    .slide-item {
+      flex: 0 0 160px;
+      scroll-snap-align: start;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.04);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .slide-img-box {
+      width: 100%;
+      height: 180px;
+      background: #fdf2f2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .slide-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .slide-info {
+      padding: 8px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      justify-content: space-between;
+    }
+
+    .slide-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 6px;
+    }
+
+    .slide-inquire {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      background: #f0fdf4;
+      color: #16a34a;
+      border: 1px solid #bbf7d0;
+      padding: 5px 0;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      text-decoration: none;
+      width: 100%;
+    }
+
+    /* Products Grid */
     .services-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -265,14 +377,13 @@
     }
 
     .service-card {
-      background: #f8fafc;
+      background: #fbfbfb;
       border: 1px solid var(--border);
-      padding: 14px 10px;
-      border-radius: 12px;
+      padding: 12px 8px;
+      border-radius: 10px;
       text-align: center;
       font-size: 12px;
       font-weight: 600;
-      color: var(--text-main);
     }
 
     .service-card i {
@@ -295,17 +406,17 @@
       width: 170px;
       height: 170px;
       margin: 0 auto 16px;
-      background: #f8fafc;
-      border: 2px dashed #cbd5e1;
+      background: #fff8f8;
+      border: 2px dashed #fca5a5;
       border-radius: 12px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       color: var(--text-muted);
-      font-size: 12px;
+      font-size: 11px;
       text-align: center;
-      padding: 10px;
+      padding: 8px;
     }
 
     .qr-slot img {
@@ -319,7 +430,7 @@
       justify-content: space-between;
       align-items: center;
       font-size: 12px;
-      padding: 9px 0;
+      padding: 8px 0;
       border-bottom: 1px solid #f1f5f9;
     }
 
@@ -378,7 +489,7 @@
       line-height: 1.6;
     }
 
-    /* Toast Notification */
+    /* Toast */
     .toast {
       position: fixed;
       bottom: 24px;
@@ -393,7 +504,6 @@
       opacity: 0;
       transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       z-index: 1000;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
     }
 
     .toast.show {
@@ -401,14 +511,11 @@
       opacity: 1;
     }
 
-    /* Share Modal Fallback */
+    /* Share Fallback Modal */
     .modal-overlay {
       position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.4);
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.45);
       display: none;
       align-items: center;
       justify-content: center;
@@ -423,7 +530,7 @@
     .modal-content {
       background: #ffffff;
       border-radius: 16px;
-      max-width: 360px;
+      max-width: 340px;
       width: 100%;
       padding: 20px;
       text-align: center;
@@ -431,9 +538,9 @@
     }
 
     .modal-title {
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 700;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
 
     .modal-buttons {
@@ -467,98 +574,6 @@
       cursor: pointer;
       font-weight: 600;
     }
-
-    /* Horizontal Product Showcase Slider */
-.product-slider-container {
-  margin-bottom: 24px;
-}
-
-.product-slider {
-  display: flex;
-  gap: 14px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  padding: 4px 2px 14px;
-}
-
-.product-slider::-webkit-scrollbar {
-  height: 6px;
-}
-
-.product-slider::-webkit-scrollbar-track {
-  background: #f1f5f9;
-  border-radius: 10px;
-}
-
-.product-slider::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
-  border-radius: 10px;
-}
-
-.slide-item {
-  flex: 0 0 170px;
-  scroll-snap-align: start;
-  background: #ffffff;
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
-  display: flex;
-  flex-direction: column;
-}
-
-.slide-img-box {
-  width: 100%;
-  height: 130px;
-  background: #f8fafc;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-muted);
-  font-size: 11px;
-  border-bottom: 1px solid var(--border);
-  position: relative;
-}
-
-.slide-img-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.slide-info {
-  padding: 10px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  justify-content: space-between;
-}
-
-.slide-title {
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--text-main);
-  margin-bottom: 6px;
-}
-
-.slide-inquire {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  background: #f0fdf4;
-  color: #16a34a;
-  border: 1px solid #bbf7d0;
-  padding: 6px 0;
-  border-radius: 6px;
-  font-size: 11px;
-  font-weight: 600;
-  text-decoration: none;
-  width: 100%;
-}
   </style>
 </head>
 <body>
@@ -570,7 +585,9 @@
       <div class="logo-container" id="logoPlaceholder">
         <img src="images/se/selogo.png" alt="SE Logo" />     
       </div>
+      <h1 class="punjabi-title">ਸ਼ੁਕਰਾਨਾ ਇਲੈਕਟ੍ਰੀਕਲਜ਼</h1>
       <h1 class="company-title">Shukrana Electricals</h1>
+      <div class="person-name-pb">ਅਰੁਣ ਗਰਗ (ਜੈਨ)</div>
       <p class="person-name">Arun Garg (Jain) &bull; Owner</p>
     </div>
 
@@ -663,11 +680,11 @@
           LED TVs & Displays
         </div>
         <div class="service-card">
-          <i class="fa-solid fa-faucet-drip"></i>
+          <i class="fa-solid fa-glass-water-droplet"></i>
           Water Filters & RO
         </div>
         <div class="service-card">
-          <i class="fa-solid fa-temperature-arrow-up"></i>
+          <i class="fa-solid fa-shower"></i>
           Geysers & Heating
         </div>
         <div class="service-card">
@@ -726,17 +743,69 @@
     <!-- Slide 4 -->
     <div class="slide-item">
       <div class="slide-img-box">
-        <img src="images/se/electric.jpeg" alt="Electrical" />     
+        <img src="images/se/switch.png" alt="Electrical" />     
       </div>
       <div class="slide-info">
         <div class="slide-title">Electrical Hardware</div>
-        <a href="https://wa.me/919780756821?text=Hi%20Arun%20ji,%20I%20am%20interested%20in%20Hardware." target="_blank" class="slide-inquire">
+        <a href="https://wa.me/919780756821?text=Hi%20Arun%20ji,%20I%20am%20interested%20in%20Electrical%20Hardware." target="_blank" class="slide-inquire">
           <i class="fa-brands fa-whatsapp"></i> Inquire
         </a>
       </div>
     </div>
 
-     </div>
+    <!-- Slide 5 -->
+    <div class="slide-item">
+      <div class="slide-img-box">
+        <img src="images/se/waterpump.jpeg" alt="waterpump" />     
+      </div>
+      <div class="slide-info">
+        <div class="slide-title">Water Pump</div>
+        <a href="https://wa.me/919780756821?text=Hi%20Arun%20ji,%20I%20am%20interested%20in%20Water%20Pump." target="_blank" class="slide-inquire">
+          <i class="fa-brands fa-whatsapp"></i> Inquire
+        </a>
+      </div>
+    </div>
+
+    <!-- Slide 6 -->
+    <div class="slide-item">
+      <div class="slide-img-box">
+        <img src="images/se/waterdis.jpeg" alt="water dispenser" />     
+      </div>
+      <div class="slide-info">
+        <div class="slide-title">Water Dispencer</div>
+        <a href="https://wa.me/919780756821?text=Hi%20Arun%20ji,%20I%20am%20interested%20in%20Water%20Dispencer." target="_blank" class="slide-inquire">
+          <i class="fa-brands fa-whatsapp"></i> Inquire
+        </a>
+      </div>
+    </div>
+
+    <!-- Slide 7 -->
+    <div class="slide-item">
+      <div class="slide-img-box">
+        <img src="images/se/airfryer.jpeg" alt="Air Fryer" />     
+      </div>
+      <div class="slide-info">
+        <div class="slide-title">Air Fryer</div>
+        <a href="https://wa.me/919780756821?text=Hi%20Arun%20ji,%20I%20am%20interested%20in%20Air%20Fryer." target="_blank" class="slide-inquire">
+          <i class="fa-brands fa-whatsapp"></i> Inquire
+        </a>
+      </div>
+    </div>
+
+    <!-- Slide 8 -->
+    <div class="slide-item">
+      <div class="slide-img-box">
+        <img src="images/se/chinmey.jpeg" alt="Chimney" />     
+      </div>
+      <div class="slide-info">
+        <div class="slide-title">Chimney</div>
+        <a href="https://wa.me/919780756821?text=Hi%20Arun%20ji,%20I%20am%20interested%20in%20Chimney." target="_blank" class="slide-inquire">
+          <i class="fa-brands fa-whatsapp"></i> Inquire
+        </a>
+      </div>
+    </div>
+
+  </div>
 </div>
 
       <!-- Payment Section -->
