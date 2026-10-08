@@ -937,3 +937,37 @@ a {
     justify-content: center;
   }
 }
+/* Contact Form Consent Checkbox */
+.form-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  text-align: left;
+}
+
+.form-consent input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-top: 3px;
+  accent-color: var(--primary-teal);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.form-consent label {
+  font-size: 0.85rem;
+  color: var(--text-gray);
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.form-consent a {
+  color: var(--primary-teal);
+  font-weight: 500;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.form-consent a:hover {
+  color: var(--secondary-navy);
+}
